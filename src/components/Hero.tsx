@@ -1,19 +1,42 @@
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+
+const images = [
+  "https://images.unsplash.com/photo-1721322800607-8c38375eef04",
+  "https://images.unsplash.com/photo-1721322800607-8c38375eef04",
+  "https://images.unsplash.com/photo-1721322800607-8c38375eef04",
+];
 
 const Hero = () => {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }, 5000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1721322800607-8c38375eef04')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div className="absolute inset-0 bg-black/40" />
-      </div>
+      {images.map((image, index) => (
+        <motion.div
+          key={index}
+          className="absolute inset-0 z-0"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: index === currentImage ? 1 : 0 }}
+          transition={{ duration: 1 }}
+          style={{
+            backgroundImage: `url('${image}')`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          <div className="absolute inset-0 bg-black/40" />
+        </motion.div>
+      ))}
 
       <div className="container relative z-10 px-4 py-32 text-center text-white">
         <motion.span
@@ -66,6 +89,18 @@ const Hero = () => {
             Download Catalogue
           </a>
         </motion.div>
+
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2">
+          {images.map((_, index) => (
+            <button
+              key={index}
+              className={`w-2 h-2 rounded-full transition-colors ${
+                index === currentImage ? "bg-white" : "bg-white/40"
+              }`}
+              onClick={() => setCurrentImage(index)}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
