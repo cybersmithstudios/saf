@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useToast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
 import { Trash2 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Enquiries = () => {
   const { toast } = useToast();

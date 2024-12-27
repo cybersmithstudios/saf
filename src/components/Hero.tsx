@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const images = [
   "https://images.unsplash.com/photo-1721322800607-8c38375eef04",
