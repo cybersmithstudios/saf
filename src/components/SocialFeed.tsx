@@ -39,13 +39,17 @@ const SocialFeed = () => {
           <p className="text-gray-600">Follow us on social media for inspiration and updates</p>
           <div className="flex justify-center gap-4 mt-4">
             <a
-              href="#"
+              href="https://www.instagram.com/saf_furniture/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="p-2 bg-[#E1306C]/10 rounded-full text-[#E1306C] hover:bg-[#E1306C]/20 transition-colors"
             >
               <Instagram className="w-6 h-6" />
             </a>
             <a
-              href="#"
+              href="https://www.facebook.com/SAFFurnitures"
+              target="_blank"
+              rel="noopener noreferrer"
               className="p-2 bg-[#1877F2]/10 rounded-full text-[#1877F2] hover:bg-[#1877F2]/20 transition-colors"
             >
               <Facebook className="w-6 h-6" />

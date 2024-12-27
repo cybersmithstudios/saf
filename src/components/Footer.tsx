@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Twitter } from "lucide-react";
+import { Facebook, Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -20,29 +20,38 @@ const Footer = () => {
               <li><Link to="/about" className="hover:text-secondary transition-colors">About</Link></li>
               <li><Link to="/collection" className="hover:text-secondary transition-colors">Collection</Link></li>
               <li><Link to="/contact" className="hover:text-secondary transition-colors">Contact</Link></li>
+              <li><Link to="/privacy-policy" className="hover:text-secondary transition-colors">Privacy Policy</Link></li>
+              <li><Link to="/terms" className="hover:text-secondary transition-colors">Terms & Conditions</Link></li>
             </ul>
           </div>
           
           <div className="space-y-4">
             <h4 className="font-semibold">Contact</h4>
             <ul className="space-y-2 text-sm">
-              <li>Email: info@saf.com</li>
-              <li>Phone: +234 123 456 7890</li>
-              <li>Lagos, Nigeria</li>
+              <li>Email: info@saf-furniture.com</li>
+              <li>Phone: 07 007 007 007</li>
+              <li>11A Idejo Street, Off Adeola Odeku, Victoria Island, Lagos</li>
             </ul>
           </div>
           
           <div className="space-y-4">
             <h4 className="font-semibold">Follow Us</h4>
             <div className="flex space-x-4">
-              <a href="#" className="hover:text-secondary transition-colors">
+              <a 
+                href="https://www.facebook.com/SAFFurnitures" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="hover:text-secondary transition-colors"
+              >
                 <Facebook className="w-6 h-6" />
               </a>
-              <a href="#" className="hover:text-secondary transition-colors">
+              <a 
+                href="https://www.instagram.com/saf_furniture/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="hover:text-secondary transition-colors"
+              >
                 <Instagram className="w-6 h-6" />
-              </a>
-              <a href="#" className="hover:text-secondary transition-colors">
-                <Twitter className="w-6 h-6" />
               </a>
             </div>
           </div>
