@@ -2,26 +2,26 @@ export const categories = [
   {
     id: "sofas",
     name: "Sofas",
-    description: "Comfortable and stylish sofas for your living space",
+    description: "Relax in Style with Lugano Sofas",
   },
   {
     id: "armchairs",
     name: "Arm Chairs",
-    description: "Elegant seating solutions for any room",
+    description: "Make a Statement with Santorini and Malibu Designs",
   },
   {
     id: "loungers",
     name: "Loungers",
-    description: "Perfect for relaxation by the pool or garden",
+    description: "Recline in Comfort with the Solo Lounger",
   },
   {
     id: "weaved-rattan",
     name: "Weaved Rattan",
-    description: "Traditional rattan-style furniture with modern durability",
+    description: "Experience Elegance with Sisi Sofas and Day Beds",
   },
   {
     id: "accessories",
     name: "Accessories",
-    description: "Complete your furniture set with matching accessories",
+    description: "Add the Finishing Touch—Umbrellas, Pillows, and More",
   },
 ];

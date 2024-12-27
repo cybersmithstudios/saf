@@ -18,7 +18,7 @@ const Collection = () => {
             transition={{ delay: 0.2 }}
             className="text-4xl md:text-5xl font-bold mb-4"
           >
-            Our Collection
+            Find Your Perfect Fit
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -26,19 +26,28 @@ const Collection = () => {
             transition={{ delay: 0.3 }}
             className="text-muted-foreground max-w-2xl mx-auto"
           >
-            Discover our range of quality plastic rattan-style furniture
+            Explore Our Range of Stylish and Functional Furniture
           </motion.p>
         </div>
 
         <Tabs defaultValue="all" className="w-full">
           <TabsList className="flex flex-wrap justify-center gap-2 mb-8">
-            <TabsTrigger value="all">All</TabsTrigger>
+            <TabsTrigger value="all">All Collections</TabsTrigger>
             {categories.map((category) => (
               <TabsTrigger key={category.id} value={category.id}>
                 {category.name}
               </TabsTrigger>
             ))}
           </TabsList>
+
+          <div className="mb-8">
+            {categories.map((category) => (
+              <TabsContent key={category.id} value={category.id}>
+                <h2 className="text-2xl font-semibold mb-4">{category.name}</h2>
+                <p className="text-muted-foreground mb-8">{category.description}</p>
+              </TabsContent>
+            ))}
+          </div>
 
           <TabsContent value="all">
             <ProductGrid category="all" />
