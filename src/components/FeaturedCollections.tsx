@@ -5,19 +5,19 @@ const collections = [
     title: "Lugano Sofas",
     description: "Modern comfort meets timeless design",
     image: "https://images.unsplash.com/photo-1721322800607-8c38375eef04",
-    link: "/collection/lugano-sofas",
+    link: "/collection?category=sofas",
   },
   {
     title: "Santorini Chairs",
     description: "Elegant seating solutions",
     image: "https://images.unsplash.com/photo-1721322800607-8c38375eef04",
-    link: "/collection/santorini-chairs",
+    link: "/collection?category=armchairs",
   },
   {
     title: "Solo Loungers",
     description: "Perfect for relaxation",
     image: "https://images.unsplash.com/photo-1721322800607-8c38375eef04",
-    link: "/collection/solo-loungers",
+    link: "/collection?category=loungers",
   },
 ];
 
@@ -68,12 +68,12 @@ const FeaturedCollections = () => {
                 <p className="text-sm text-gray-200 mb-4">
                   {collection.description}
                 </p>
-                <a
-                  href={collection.link}
+                <Link
+                  to={collection.link}
                   className="inline-block w-fit px-4 py-2 bg-white/10 hover:bg-white/20 rounded-full backdrop-blur-sm transition-all duration-300"
                 >
                   View Collection
-                </a>
+                </Link>
               </div>
             </motion.div>
           ))}

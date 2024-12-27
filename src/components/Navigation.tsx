@@ -1,17 +1,30 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, ShoppingCart } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
+
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsMenuOpen(false);
+      }
+    };
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
   }, []);
 
   return (
@@ -33,14 +46,12 @@ const Navigation = () => {
 
           <div className="hidden md:flex items-center space-x-8">
             <NavLinks />
-            <button className="p-2 hover:bg-gray-100 rounded-full transition-colors">
-              <ShoppingCart className="w-5 h-5" />
-            </button>
           </div>
 
           <button
             className="md:hidden p-2 hover:bg-gray-100 rounded-full transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -49,10 +60,13 @@ const Navigation = () => {
 
       {/* Mobile menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white border-t animate-fade-in">
+        <div 
+          ref={menuRef}
+          className="md:hidden bg-white border-t animate-fade-in"
+        >
           <div className="container mx-auto px-4 py-4">
             <div className="flex flex-col space-y-4">
-              <NavLinks mobile />
+              <NavLinks mobile setIsMenuOpen={setIsMenuOpen} />
             </div>
           </div>
         </div>
@@ -61,15 +75,27 @@ const Navigation = () => {
   );
 };
 
-const NavLinks = ({ mobile = false }: { mobile?: boolean }) => {
+const NavLinks = ({ 
+  mobile = false, 
+  setIsMenuOpen = () => {} 
+}: { 
+  mobile?: boolean;
+  setIsMenuOpen?: (value: boolean) => void;
+}) => {
   const links = [
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Collection", path: "/collection" },
     { name: "Distributors", path: "/distributors" },
     { name: "Contact", path: "/contact" },
-    { name: "Catalogue", path: "/catalogue" },
+    { name: "Enquiries", path: "/enquiries" },
   ];
+
+  const handleClick = () => {
+    if (mobile) {
+      setIsMenuOpen(false);
+    }
+  };
 
   const baseClasses = "transition-colors hover:text-accent";
   const mobileClasses = "block py-2";
@@ -81,6 +107,7 @@ const NavLinks = ({ mobile = false }: { mobile?: boolean }) => {
         <Link
           key={link.name}
           to={link.path}
+          onClick={handleClick}
           className={`${baseClasses} ${
             mobile ? mobileClasses : desktopClasses
           }`}

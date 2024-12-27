@@ -19,6 +19,17 @@ const Hero = () => {
     return () => clearInterval(timer);
   }, []);
 
+  const handleDownloadCatalogue = () => {
+    // Replace with actual catalogue PDF path
+    const catalogueUrl = '/catalogue.pdf';
+    const link = document.createElement('a');
+    link.href = catalogueUrl;
+    link.download = 'SAF-Furniture-Catalogue.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {images.map((image, index) => (
@@ -75,19 +86,19 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <a
-            href="/collection"
+          <Link
+            to="/collection"
             className="group px-8 py-3 bg-accent hover:bg-accent/90 text-white rounded-full transition-all duration-300 flex items-center gap-2"
           >
             Explore Collection
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </a>
-          <a
-            href="/catalogue"
+          </Link>
+          <button
+            onClick={handleDownloadCatalogue}
             className="px-8 py-3 bg-white/10 hover:bg-white/20 text-white rounded-full backdrop-blur-sm transition-all duration-300"
           >
             Download Catalogue
-          </a>
+          </button>
         </motion.div>
 
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2">
