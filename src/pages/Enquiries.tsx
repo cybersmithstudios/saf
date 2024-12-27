@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Trash2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEnquiryStore } from "@/store/useEnquiryStore";
+import { motion } from "framer-motion";
 
 const Enquiries = () => {
   const { toast } = useToast();
