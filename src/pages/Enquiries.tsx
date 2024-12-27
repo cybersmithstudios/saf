@@ -1,28 +1,19 @@
-import { motion } from "framer-motion";
 import { useToast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
 import { Trash2 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useEnquiryStore } from "@/store/useEnquiryStore";
 
 const Enquiries = () => {
   const { toast } = useToast();
-
-  // This would typically come from a global state management solution
-  const enquiries = []; // Placeholder for enquiry items
+  const { items, removeItem, clearItems } = useEnquiryStore();
 
   const handleSubmitEnquiry = () => {
     toast({
       title: "Enquiry Submitted",
       description: "We'll get back to you shortly with more information.",
     });
-  };
-
-  const handleRemoveItem = (id: string) => {
-    // Implementation for removing items would go here
-    toast({
-      title: "Item Removed",
-      description: "The item has been removed from your enquiry list.",
-    });
+    clearItems();
   };
 
   return (
@@ -35,7 +26,7 @@ const Enquiries = () => {
         >
           <h1 className="text-4xl font-bold mb-8">Your Enquiries</h1>
           
-          {enquiries.length === 0 ? (
+          {items.length === 0 ? (
             <div className="text-center py-12">
               <p className="text-lg text-gray-600 mb-4">
                 Your enquiry list is empty
@@ -46,7 +37,7 @@ const Enquiries = () => {
             </div>
           ) : (
             <div className="space-y-6">
-              {enquiries.map((item) => (
+              {items.map((item) => (
                 <motion.div
                   key={item.id}
                   initial={{ opacity: 0, x: -20 }}
@@ -55,7 +46,7 @@ const Enquiries = () => {
                   className="flex items-center gap-4 p-4 bg-white rounded-lg shadow-sm"
                 >
                   <img
-                    src={item.image}
+                    src={item.images[0]}
                     alt={item.name}
                     className="w-24 h-24 object-cover rounded"
                   />
@@ -64,7 +55,7 @@ const Enquiries = () => {
                     <p className="text-sm text-gray-600">{item.category}</p>
                   </div>
                   <button
-                    onClick={() => handleRemoveItem(item.id)}
+                    onClick={() => removeItem(item.id)}
                     className="p-2 hover:bg-gray-100 rounded-full transition-colors"
                   >
                     <Trash2 className="w-5 h-5 text-gray-500" />

@@ -11,6 +11,7 @@ import Contact from "./pages/Contact";
 import Collection from "./pages/Collection";
 import Enquiries from "./pages/Enquiries";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Catalogue from "./pages/Catalogue";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +31,7 @@ const App = () => (
               <Route path="/collection" element={<Collection />} />
               <Route path="/enquiries" element={<Enquiries />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/catalogue" element={<Catalogue />} />
             </Routes>
           </main>
           <Footer />

@@ -4,6 +4,7 @@ import { useState } from "react";
 import ProductModal from "./ProductModal";
 import { products } from "@/data/products";
 import { useToast } from "@/components/ui/use-toast";
+import { useEnquiryStore } from "@/store/useEnquiryStore";
 
 interface ProductGridProps {
   category: string;
@@ -12,15 +13,17 @@ interface ProductGridProps {
 const ProductGrid = ({ category }: ProductGridProps) => {
   const [selectedProduct, setSelectedProduct] = useState<string | null>(null);
   const { toast } = useToast();
+  const addItem = useEnquiryStore((state) => state.addItem);
 
   const filteredProducts = category === "all" 
     ? products 
     : products.filter(product => product.categoryId === category);
 
-  const handleEnquiry = (productName: string) => {
+  const handleEnquiry = (product: typeof products[0]) => {
+    addItem(product);
     toast({
       title: "Added to enquiry",
-      description: `${productName} has been added to your enquiry list.`,
+      description: `${product.name} has been added to your enquiry list.`,
     });
   };
 
@@ -56,7 +59,7 @@ const ProductGrid = ({ category }: ProductGridProps) => {
               <button
                 onClick={(e) => {
                   e.stopPropagation();
-                  handleEnquiry(product.name);
+                  handleEnquiry(product);
                 }}
                 className="p-2 rounded-full hover:bg-gray-100 transition-colors"
               >
