@@ -7,7 +7,13 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <h3 className="text-xl font-bold">SAF</h3>
+            <Link to="/">
+              <img 
+                src="/lovable-uploads/ad77b95c-9490-4209-9bd0-f70577109f68.png" 
+                alt="SAF Logo" 
+                className="h-12 mb-4"
+              />
+            </Link>
             <p className="text-sm">
               Quality plastic rattan-style furniture since 1976.
             </p>
@@ -20,8 +26,8 @@ const Footer = () => {
               <li><Link to="/about" className="hover:text-secondary transition-colors">About</Link></li>
               <li><Link to="/collection" className="hover:text-secondary transition-colors">Collection</Link></li>
               <li><Link to="/contact" className="hover:text-secondary transition-colors">Contact</Link></li>
+              <li><Link to="/catalogue" className="hover:text-secondary transition-colors">Catalogue</Link></li>
               <li><Link to="/privacy-policy" className="hover:text-secondary transition-colors">Privacy Policy</Link></li>
-              <li><Link to="/terms" className="hover:text-secondary transition-colors">Terms & Conditions</Link></li>
             </ul>
           </div>
           
@@ -35,7 +41,7 @@ const Footer = () => {
           </div>
           
           <div className="space-y-4">
-            <h4 className="font-semibold">Follow Us</h4>
+            <h4 className="font-semibold">Stay Connected</h4>
             <div className="flex space-x-4">
               <a 
                 href="https://www.facebook.com/SAFFurnitures" 
