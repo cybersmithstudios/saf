@@ -11,37 +11,37 @@ import {
 const socialPosts = [
   {
     platform: "instagram",
-    image: "/lovable-uploads/dac2d1ac-1b10-4ea9-8c80-3b12eeb7357a.png",
+    image: "",
     caption: "Santorini Collection - Perfect for indoor and outdoor settings ✨",
     likes: 245,
   },
   {
     platform: "facebook",
-    image: "/lovable-uploads/c8c7f657-3088-4bcf-9ff1-ba6a49cc4f36.png",
+    image: "",
     caption: "Malibu Series - Comfort meets style in our latest collection 🪑",
     likes: 189,
   },
   {
     platform: "instagram",
-    image: "/lovable-uploads/8107ab09-d54f-4800-9217-64f7400dae22.png",
+    image: "",
     caption: "Versatile designs for every space 🏠",
     likes: 312,
   },
   {
     platform: "instagram",
-    image: "/lovable-uploads/82830cc7-5424-4b30-bde9-c253a3e16469.png",
+    image: "",
     caption: "Perfect for events and gatherings 🎉",
     likes: 278,
   },
   {
     platform: "facebook",
-    image: "/lovable-uploads/e235556c-31ed-453d-a06b-b26df833f6b6.png",
+    image: "",
     caption: "Transform your outdoor spaces 🌿",
     likes: 156,
   },
   {
     platform: "instagram",
-    image: "/lovable-uploads/84748e81-dd42-4ddb-a94d-3fbbe7ca0f41.png",
+    image: "",
     caption: "Relax in style with our outdoor collection 🌳",
     likes: 423,
   },
