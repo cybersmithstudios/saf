@@ -5,19 +5,19 @@ const collections = [
   {
     title: "Lugano Sofas",
     description: "Modern comfort meets timeless design",
-    image: "https://images.unsplash.com/photo-1721322800607-8c38375eef04",
+    image: "/lovable-uploads/8107ab09-d54f-4800-9217-64f7400dae22.png",
     link: "/collection?category=sofas",
   },
   {
     title: "Santorini Chairs",
     description: "Elegant seating solutions",
-    image: "https://images.unsplash.com/photo-1721322800607-8c38375eef04",
+    image: "/lovable-uploads/c8c7f657-3088-4bcf-9ff1-ba6a49cc4f36.png",
     link: "/collection?category=armchairs",
   },
   {
     title: "Solo Loungers",
     description: "Perfect for relaxation",
-    image: "https://images.unsplash.com/photo-1721322800607-8c38375eef04",
+    image: "/lovable-uploads/611cb7fe-bce8-4c02-9919-37580b6f6f9d.png",
     link: "/collection?category=loungers",
   },
 ];
