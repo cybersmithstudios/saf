@@ -1,12 +1,9 @@
 import { Building, Calendar, Users, Award, Heart } from "lucide-react";
-import Navigation from "@/components/Navigation";
 import { motion } from "framer-motion";
 
 const About = () => {
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
-      
       {/* Hero Section */}
       <section className="pt-24 pb-12 px-4 md:px-6 lg:px-8">
         <motion.div 
@@ -31,8 +28,8 @@ const About = () => {
           >
             <div>
               <img 
-                src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3"
-                alt="Modern furniture showcase"
+                src="/lovable-uploads/ed2c76da-5c96-4d95-974e-c05b73477892.png"
+                alt="SAF Outdoor Furniture Showcase"
                 className="rounded-lg shadow-lg w-full h-[400px] object-cover"
               />
             </div>
