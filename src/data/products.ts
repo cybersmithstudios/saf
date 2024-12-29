@@ -85,7 +85,11 @@ export const products = [
     categoryId: "loungers",
     subcategoryId: "solo-lounger",
     description: "Perfect for poolside relaxation, the Solo Lounger offers adjustable positions and weather resistance.",
-    images: [],
+    images: [
+      "/lovable-uploads/73d9cba3-8796-4296-96d5-36007c24aafd.png",
+      "/lovable-uploads/5c1dff86-8d51-4c6c-b183-74105bba67f7.png",
+      "/lovable-uploads/cbe3366e-6a94-41d6-8c1a-c9481ff4796a.png"
+    ],
     dimensions: {
       width: 200,
       height: 40,

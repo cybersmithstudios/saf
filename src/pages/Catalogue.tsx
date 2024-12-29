@@ -1,8 +1,12 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
+import { useState } from "react";
+import CustomOrderForm from "@/components/catalogue/CustomOrderForm";
 
 const Catalogue = () => {
+  const [showCustomOrderForm, setShowCustomOrderForm] = useState(false);
+
   const handleDownload = () => {
     const link = document.createElement('a');
     link.href = '/catalogue.pdf';
@@ -31,8 +35,12 @@ const Catalogue = () => {
               <Button size="lg" onClick={handleDownload}>
                 Order Now and Save!
               </Button>
-              <Button size="lg" variant="outline">
-                Claim Your Free Voucher
+              <Button 
+                size="lg" 
+                variant="outline"
+                onClick={() => setShowCustomOrderForm(true)}
+              >
+                Custom Order
               </Button>
             </div>
           </motion.div>
@@ -59,6 +67,11 @@ const Catalogue = () => {
           </div>
         </div>
       </div>
+
+      <CustomOrderForm 
+        open={showCustomOrderForm} 
+        onClose={() => setShowCustomOrderForm(false)} 
+      />
     </div>
   );
 };
