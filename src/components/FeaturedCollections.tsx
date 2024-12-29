@@ -9,16 +9,16 @@ const collections = [
     link: "/collection?category=lugano",
   },
   {
+    title: "Malibu Chairs",
+    description: "Modern seating solutions",
+    image: "/lovable-uploads/4ac84e4a-2c20-4076-83be-33777c97db21.png",
+    link: "/collection?category=armchairs",
+  },
+  {
     title: "Santorini Chairs",
     description: "Elegant seating solutions",
     image: "/lovable-uploads/eb87953d-ca38-4475-a9c4-7a4fa90acecb.png",
     link: "/collection?category=armchairs",
-  },
-  {
-    title: "Solo Loungers",
-    description: "Perfect for relaxation",
-    image: "",
-    link: "/collection?category=loungers",
   },
 ];
 

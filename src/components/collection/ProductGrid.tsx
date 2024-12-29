@@ -37,7 +37,7 @@ const ProductGrid = ({ category }: ProductGridProps) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
-            className="group"
+            className="group relative"
           >
             <div className="relative aspect-square overflow-hidden rounded-lg bg-gray-100">
               <img
@@ -45,33 +45,28 @@ const ProductGrid = ({ category }: ProductGridProps) => {
                 alt={product.name}
                 className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
-                <Button
-                  variant="secondary"
-                  size="sm"
-                  onClick={() => setSelectedProduct(product.id)}
-                  className="flex items-center gap-2"
-                >
-                  <Eye className="w-4 h-4" />
-                  View Details
-                </Button>
-                <Button
-                  variant="secondary"
-                  size="sm"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    handleEnquiry(product);
-                  }}
-                  className="flex items-center gap-2"
-                >
-                  <Plus className="w-4 h-4" />
-                  Add to Enquiry
-                </Button>
-              </div>
+              <button
+                onClick={() => setSelectedProduct(product.id)}
+                className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"
+              >
+                <Eye className="w-6 h-6 text-white" />
+              </button>
             </div>
-            <div className="mt-4">
-              <h3 className="text-lg font-semibold">{product.name}</h3>
-              <p className="text-sm text-muted-foreground">{product.category}</p>
+            <div className="mt-4 flex items-center justify-between">
+              <div>
+                <h3 className="text-lg font-semibold">{product.name}</h3>
+                <p className="text-sm text-muted-foreground">{product.category}</p>
+              </div>
+              <Button
+                size="icon"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleEnquiry(product);
+                }}
+                className="rounded-full"
+              >
+                <Plus className="w-4 h-4" />
+              </Button>
             </div>
           </motion.div>
         ))}
