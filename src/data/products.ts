@@ -27,7 +27,12 @@ export const products = [
     categoryId: "armchairs",
     subcategoryId: "santorini",
     description: "The Santorini chair combines comfort with Mediterranean-inspired design.",
-    images: [],
+    images: [
+      "/lovable-uploads/eb87953d-ca38-4475-a9c4-7a4fa90acecb.png",
+      "/lovable-uploads/653d1dc0-bf60-4664-a518-4127a71d7de3.png",
+      "/lovable-uploads/d402dc44-b1eb-436c-b601-a41cd6653801.png",
+      "/lovable-uploads/225933d8-4940-4ca5-b141-156ed3f0e861.png"
+    ],
     dimensions: {
       width: 75,
       height: 85,
