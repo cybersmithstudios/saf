@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import ProductGrid from "@/components/collection/ProductGrid";
 import { categories } from "@/data/categories";
+import ProductGrid from "@/components/collection/ProductGrid";
+import { ChevronRight } from "lucide-react";
 
 const Collection = () => {
   return (
@@ -18,7 +19,7 @@ const Collection = () => {
             transition={{ delay: 0.2 }}
             className="text-4xl md:text-5xl font-bold mb-4"
           >
-            Find Your Perfect Fit
+            Our Collections
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -26,15 +27,30 @@ const Collection = () => {
             transition={{ delay: 0.3 }}
             className="text-muted-foreground max-w-2xl mx-auto"
           >
-            Explore Our Range of Stylish and Functional Furniture
+            Discover Our Range of Premium Furniture
           </motion.p>
         </div>
 
+        <nav className="flex mb-4 text-sm text-muted-foreground">
+          <span>Home</span>
+          <ChevronRight className="w-4 h-4 mx-2" />
+          <span className="text-foreground">Collections</span>
+        </nav>
+
         <Tabs defaultValue="all" className="w-full">
-          <TabsList className="flex flex-wrap justify-center gap-2 mb-8">
-            <TabsTrigger value="all">All Collections</TabsTrigger>
+          <TabsList className="flex flex-wrap justify-start gap-2 mb-8 bg-transparent">
+            <TabsTrigger 
+              value="all"
+              className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+            >
+              All Collections
+            </TabsTrigger>
             {categories.map((category) => (
-              <TabsTrigger key={category.id} value={category.id}>
+              <TabsTrigger
+                key={category.id}
+                value={category.id}
+                className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+              >
                 {category.name}
               </TabsTrigger>
             ))}
@@ -43,8 +59,21 @@ const Collection = () => {
           <div className="mb-8">
             {categories.map((category) => (
               <TabsContent key={category.id} value={category.id}>
-                <h2 className="text-2xl font-semibold mb-4">{category.name}</h2>
-                <p className="text-muted-foreground mb-8">{category.description}</p>
+                <div className="mb-8">
+                  <h2 className="text-2xl font-semibold mb-2">{category.name}</h2>
+                  <p className="text-muted-foreground mb-4">{category.description}</p>
+                  <div className="flex flex-wrap gap-4">
+                    {category.subcategories.map((subcategory) => (
+                      <button
+                        key={subcategory.id}
+                        className="px-4 py-2 text-sm rounded-full bg-secondary/10 hover:bg-secondary/20 transition-colors"
+                      >
+                        {subcategory.name}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+                <ProductGrid category={category.id} />
               </TabsContent>
             ))}
           </div>
@@ -52,12 +81,6 @@ const Collection = () => {
           <TabsContent value="all">
             <ProductGrid category="all" />
           </TabsContent>
-
-          {categories.map((category) => (
-            <TabsContent key={category.id} value={category.id}>
-              <ProductGrid category={category.id} />
-            </TabsContent>
-          ))}
         </Tabs>
       </motion.div>
     </div>

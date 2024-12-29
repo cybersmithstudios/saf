@@ -1,13 +1,14 @@
 export const products = [
   {
-    id: "lugano-sofa",
-    name: "Lugano Sofa",
-    category: "Sofas",
-    categoryId: "sofas",
-    description: "Modern comfort meets timeless design with our signature Lugano sofa. Perfect for both indoor and outdoor settings.",
+    id: "lugano-1-seater",
+    name: "Lugano 1 Seater",
+    category: "Lugano",
+    categoryId: "lugano",
+    subcategoryId: "1-seater",
+    description: "Compact and stylish single seater from our signature Lugano collection.",
     images: [],
     dimensions: {
-      width: 220,
+      width: 90,
       height: 85,
       depth: 90,
     },
@@ -20,10 +21,11 @@ export const products = [
     assembly: "Easy assembly with provided instructions and tools",
   },
   {
-    id: "santorini-chair",
-    name: "Santorini Chair",
+    id: "santorini-armchair",
+    name: "Santorini Arm Chair",
     category: "Arm Chairs",
     categoryId: "armchairs",
+    subcategoryId: "santorini",
     description: "The Santorini chair combines comfort with Mediterranean-inspired design.",
     images: [],
     dimensions: {
@@ -44,6 +46,7 @@ export const products = [
     name: "Solo Lounger",
     category: "Loungers",
     categoryId: "loungers",
+    subcategoryId: "solo-lounger",
     description: "Perfect for poolside relaxation, the Solo Lounger offers adjustable positions and weather resistance.",
     images: [],
     dimensions: {
