@@ -21,6 +21,53 @@ export const products = [
     assembly: "Easy assembly with provided instructions and tools",
   },
   {
+    id: "lugano-2-seater",
+    name: "Lugano 2 Seater",
+    category: "Lugano",
+    categoryId: "lugano",
+    subcategoryId: "2-seater",
+    description: "Elegant two-seater sofa from our signature Lugano collection.",
+    images: [
+      "/lovable-uploads/4bec29bf-9e8a-4c29-a01c-988afb8fa84e.png",
+      "/lovable-uploads/b07ea724-d996-44bd-a814-b4cb8f0bd1c9.png"
+    ],
+    dimensions: {
+      width: 160,
+      height: 85,
+      depth: 90,
+    },
+    materials: [
+      "High-quality plastic rattan",
+      "Powder-coated aluminum frame",
+      "Weather-resistant cushions",
+    ],
+    colors: ["#8B4513", "#A0522D", "#D2691E"],
+    assembly: "Easy assembly with provided instructions and tools",
+  },
+  {
+    id: "lugano-3-seater",
+    name: "Lugano 3 Seater",
+    category: "Lugano",
+    categoryId: "lugano",
+    subcategoryId: "3-seater",
+    description: "Spacious three-seater sofa from our signature Lugano collection.",
+    images: [
+      "/lovable-uploads/421e2a44-e815-41c1-82dd-1a469780dea3.png"
+    ],
+    dimensions: {
+      width: 220,
+      height: 85,
+      depth: 90,
+    },
+    materials: [
+      "High-quality plastic rattan",
+      "Powder-coated aluminum frame",
+      "Weather-resistant cushions",
+    ],
+    colors: ["#8B4513", "#A0522D", "#D2691E"],
+    assembly: "Easy assembly with provided instructions and tools",
+  },
+  {
     id: "malibu-armchair",
     name: "Malibu Arm Chair",
     category: "Arm Chairs",
