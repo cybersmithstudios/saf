@@ -6,7 +6,12 @@ export const products = [
     categoryId: "lugano",
     subcategoryId: "1-seater",
     description: "Compact and stylish single seater from our signature Lugano collection.",
-    images: [],
+    images: [
+      "/lovable-uploads/093c3430-a896-4168-8cd5-8c9fd3bc3097.png",
+      "/lovable-uploads/cb2e808e-dd4e-4d1d-91dc-3907724a531d.png",
+      "/lovable-uploads/e960a56d-171b-4dac-bc72-573f268c89bb.png",
+      "/lovable-uploads/78c960b4-b388-4391-8896-ddef3eb7daa2.png"
+    ],
     dimensions: {
       width: 90,
       height: 85,
