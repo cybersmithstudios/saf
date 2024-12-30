@@ -28,8 +28,10 @@ export const products = [
     subcategoryId: "2-seater",
     description: "Elegant two-seater sofa from our signature Lugano collection.",
     images: [
-      "/lovable-uploads/4bec29bf-9e8a-4c29-a01c-988afb8fa84e.png",
-      "/lovable-uploads/b07ea724-d996-44bd-a814-b4cb8f0bd1c9.png"
+      "/lovable-uploads/3603e261-7c67-4c5a-8eca-18a9b3d485c0.png",
+      "/lovable-uploads/84a43ce2-bedb-4b1b-9767-076f4a67eeb4.png",
+      "/lovable-uploads/af25573f-c232-42ad-9b60-140b55ba4cac.png",
+      "/lovable-uploads/ca79530c-0dfb-4a04-a513-d37da8d9b661.png"
     ],
     dimensions: {
       width: 160,
