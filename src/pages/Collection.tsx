@@ -3,6 +3,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { categories } from "@/data/categories";
 import ProductGrid from "@/components/collection/ProductGrid";
 import { ChevronRight } from "lucide-react";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 const Collection = () => {
   return (
@@ -38,23 +39,25 @@ const Collection = () => {
         </nav>
 
         <Tabs defaultValue="all" className="w-full">
-          <TabsList className="flex flex-wrap justify-start gap-2 mb-8 bg-transparent">
-            <TabsTrigger 
-              value="all"
-              className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
-            >
-              All Collections
-            </TabsTrigger>
-            {categories.map((category) => (
-              <TabsTrigger
-                key={category.id}
-                value={category.id}
-                className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+          <ScrollArea className="w-full pb-4 mb-4">
+            <TabsList className="flex w-max min-w-full justify-start gap-2 bg-transparent p-1">
+              <TabsTrigger 
+                value="all"
+                className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground whitespace-nowrap"
               >
-                {category.name}
+                All Collections
               </TabsTrigger>
-            ))}
-          </TabsList>
+              {categories.map((category) => (
+                <TabsTrigger
+                  key={category.id}
+                  value={category.id}
+                  className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground whitespace-nowrap"
+                >
+                  {category.name}
+                </TabsTrigger>
+              ))}
+            </TabsList>
+          </ScrollArea>
 
           <div className="mb-8">
             {categories.map((category) => (
@@ -62,16 +65,18 @@ const Collection = () => {
                 <div className="mb-8">
                   <h2 className="text-2xl font-semibold mb-2">{category.name}</h2>
                   <p className="text-muted-foreground mb-4">{category.description}</p>
-                  <div className="flex flex-wrap gap-4">
-                    {category.subcategories.map((subcategory) => (
-                      <button
-                        key={subcategory.id}
-                        className="px-4 py-2 text-sm rounded-full bg-secondary/10 hover:bg-secondary/20 transition-colors"
-                      >
-                        {subcategory.name}
-                      </button>
-                    ))}
-                  </div>
+                  <ScrollArea className="w-full pb-4">
+                    <div className="flex w-max min-w-full gap-2">
+                      {category.subcategories.map((subcategory) => (
+                        <button
+                          key={subcategory.id}
+                          className="px-4 py-2 text-sm rounded-full bg-secondary/10 hover:bg-secondary/20 transition-colors whitespace-nowrap"
+                        >
+                          {subcategory.name}
+                        </button>
+                      ))}
+                    </div>
+                  </ScrollArea>
                 </div>
                 <ProductGrid category={category.id} />
               </TabsContent>
