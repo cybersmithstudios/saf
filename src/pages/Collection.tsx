@@ -40,7 +40,7 @@ const Collection = () => {
 
         <Tabs defaultValue="all" className="w-full">
           <ScrollArea className="w-full pb-4 mb-4">
-            <TabsList className="inline-flex h-auto p-1 bg-muted">
+            <TabsList className="inline-flex w-max h-auto p-1 bg-muted">
               <TabsTrigger 
                 value="all"
                 className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground px-4 py-2"

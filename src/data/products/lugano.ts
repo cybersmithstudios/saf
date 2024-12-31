@@ -126,5 +126,106 @@ export const luganoProducts = [
     ],
     colors: ["#8B4513", "#A0522D", "#D2691E"],
     assembly: "Easy assembly with provided instructions and tools",
+  },
+  {
+    id: "lugano-4-seater-set",
+    name: "Lugano 4 Seater Set",
+    category: "Lugano",
+    categoryId: "lugano",
+    subcategoryId: "4-seater-set",
+    description: "Complete 4-seater set from our signature Lugano collection.",
+    images: [
+      "/lovable-uploads/cb3abd28-d7c8-4826-923a-fafee4cea4f3.png",
+      "/lovable-uploads/1c0e71a8-de3f-4b73-af6e-c5c36432234a.png",
+      "/lovable-uploads/13dac4fa-4605-42ea-9cdd-37526537c9c9.png",
+      "/lovable-uploads/dc459af6-79e3-4b58-a086-79ed98725986.png"
+    ],
+    dimensions: {
+      width: 300,
+      height: 85,
+      depth: 90,
+    },
+    materials: [
+      "High-quality plastic rattan",
+      "Powder-coated aluminum frame",
+      "Weather-resistant cushions",
+    ],
+    colors: ["#8B4513", "#A0522D", "#D2691E"],
+    assembly: "Easy assembly with provided instructions and tools",
+  },
+  {
+    id: "lugano-5-seater-set",
+    name: "Lugano 5 Seater Set",
+    category: "Lugano",
+    categoryId: "lugano",
+    subcategoryId: "5-seater-set",
+    description: "Complete 5-seater set from our signature Lugano collection.",
+    images: [
+      "/lovable-uploads/84b13dde-aa36-49f6-a404-3fcf40ca1dfc.png",
+      "/lovable-uploads/700ae1e3-1876-4a36-8c4f-6d84f57ae8e6.png",
+      "/lovable-uploads/2310053d-cf56-4a3c-b3a5-f81d11b348c4.png"
+    ],
+    dimensions: {
+      width: 350,
+      height: 85,
+      depth: 90,
+    },
+    materials: [
+      "High-quality plastic rattan",
+      "Powder-coated aluminum frame",
+      "Weather-resistant cushions",
+    ],
+    colors: ["#8B4513", "#A0522D", "#D2691E"],
+    assembly: "Easy assembly with provided instructions and tools",
+  },
+  {
+    id: "lugano-6-seater-set",
+    name: "Lugano 6 Seater Set",
+    category: "Lugano",
+    categoryId: "lugano",
+    subcategoryId: "6-seater-set",
+    description: "Complete 6-seater set from our signature Lugano collection.",
+    images: [
+      "/lovable-uploads/edaf6c95-e5ce-4f69-87d5-0a697d0b4f8d.png",
+      "/lovable-uploads/834f18d3-60a8-41fb-95f2-f45c27eb4803.png",
+      "/lovable-uploads/96e06856-725c-4bd2-9935-51ed854a450d.png"
+    ],
+    dimensions: {
+      width: 400,
+      height: 85,
+      depth: 90,
+    },
+    materials: [
+      "High-quality plastic rattan",
+      "Powder-coated aluminum frame",
+      "Weather-resistant cushions",
+    ],
+    colors: ["#8B4513", "#A0522D", "#D2691E"],
+    assembly: "Easy assembly with provided instructions and tools",
+  },
+  {
+    id: "lugano-7-seater-set",
+    name: "Lugano 7 Seater Set",
+    category: "Lugano",
+    categoryId: "lugano",
+    subcategoryId: "7-seater-set",
+    description: "Complete 7-seater set from our signature Lugano collection.",
+    images: [
+      "/lovable-uploads/c038d34f-e43f-451b-8296-145e13ba26a0.png",
+      "/lovable-uploads/5fdee74c-a072-49fd-8572-173f507e326c.png",
+      "/lovable-uploads/fa4f7534-6c9d-47e3-bfe1-aede5f83f9a0.png"
+    ],
+    dimensions: {
+      width: 450,
+      height: 85,
+      depth: 90,
+    },
+    materials: [
+      "High-quality plastic rattan",
+      "Powder-coated aluminum frame",
+      "Weather-resistant cushions",
+    ],
+    colors: ["#8B4513", "#A0522D", "#D2691E"],
+    assembly: "Easy assembly with provided instructions and tools",
   }
 ];
