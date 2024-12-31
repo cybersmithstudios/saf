@@ -84,8 +84,10 @@ export const luganoProducts = [
     subcategoryId: "2-seater-set",
     description: "Complete 2-seater set from our signature Lugano collection.",
     images: [
-      "/lovable-uploads/daa08640-17ed-457e-aba0-510af7983093.png",
-      "/lovable-uploads/84748e81-dd42-4ddb-a94d-3fbbe7ca0f41.png"
+      "/lovable-uploads/4d5323e1-b64c-4f9d-8060-b8a5863e22a8.png",
+      "/lovable-uploads/4c3bae40-47b2-411e-a75c-995fe2bb7100.png",
+      "/lovable-uploads/91cbda2f-400c-4af7-bdc8-ca92e167597a.png",
+      "/lovable-uploads/01b57081-f4be-49be-bb16-913438a3e14c.png"
     ],
     dimensions: {
       width: 200,
@@ -108,8 +110,9 @@ export const luganoProducts = [
     subcategoryId: "3-seater-set",
     description: "Complete 3-seater set from our signature Lugano collection.",
     images: [
-      "/lovable-uploads/611cb7fe-bce8-4c02-9919-37580b6f6f9d.png",
-      "/lovable-uploads/65879cab-ba73-4755-97c6-8fd1e34a0a74.png"
+      "/lovable-uploads/c069bc9d-7488-49d1-8adf-e34274fed27e.png",
+      "/lovable-uploads/5d351458-256f-47bf-a517-7eb5dde91768.png",
+      "/lovable-uploads/a5bcbf80-b244-41fa-a64c-a9a7b72a99fc.png"
     ],
     dimensions: {
       width: 260,

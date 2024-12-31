@@ -40,25 +40,23 @@ const Collection = () => {
 
         <Tabs defaultValue="all" className="w-full">
           <ScrollArea className="w-full pb-4 mb-4">
-            <div className="flex min-w-max">
-              <TabsList className="bg-transparent p-0 h-auto">
-                <TabsTrigger 
-                  value="all"
+            <TabsList className="inline-flex h-auto p-1 bg-muted">
+              <TabsTrigger 
+                value="all"
+                className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground px-4 py-2"
+              >
+                All Collections
+              </TabsTrigger>
+              {categories.map((category) => (
+                <TabsTrigger
+                  key={category.id}
+                  value={category.id}
                   className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground px-4 py-2"
                 >
-                  All Collections
+                  {category.name}
                 </TabsTrigger>
-                {categories.map((category) => (
-                  <TabsTrigger
-                    key={category.id}
-                    value={category.id}
-                    className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground px-4 py-2"
-                  >
-                    {category.name}
-                  </TabsTrigger>
-                ))}
-              </TabsList>
-            </div>
+              ))}
+            </TabsList>
             <ScrollBar orientation="horizontal" />
           </ScrollArea>
 
