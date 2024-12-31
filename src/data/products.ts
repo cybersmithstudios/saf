@@ -33,10 +33,10 @@ export const products = [
     subcategoryId: "2-seater",
     description: "Elegant two-seater sofa from our signature Lugano collection.",
     images: [
-      "/lovable-uploads/3603e261-7c67-4c5a-8eca-18a9b3d485c0.png",
-      "/lovable-uploads/84a43ce2-bedb-4b1b-9767-076f4a67eeb4.png",
-      "/lovable-uploads/af25573f-c232-42ad-9b60-140b55ba4cac.png",
-      "/lovable-uploads/ca79530c-0dfb-4a04-a513-d37da8d9b661.png"
+      "/lovable-uploads/723ae6f7-3704-4ff8-8721-dd5037b2f65a.png",
+      "/lovable-uploads/c545579d-5472-465f-8359-abab03f75467.png",
+      "/lovable-uploads/189ef950-fa27-472c-85cb-36d2fa235d93.png",
+      "/lovable-uploads/282047ef-1a9b-47e6-ba84-94586211bd24.png"
     ],
     dimensions: {
       width: 160,
@@ -59,7 +59,9 @@ export const products = [
     subcategoryId: "3-seater",
     description: "Spacious three-seater sofa from our signature Lugano collection.",
     images: [
-      "/lovable-uploads/421e2a44-e815-41c1-82dd-1a469780dea3.png"
+      "/lovable-uploads/322a576f-e347-44ef-b1d4-db0bf90b9b41.png",
+      "/lovable-uploads/f83909e0-158b-4b15-893e-7ab09cb4efe8.png",
+      "/lovable-uploads/568f1a96-293d-4c95-885f-4bc1611b7e6f.png"
     ],
     dimensions: {
       width: 220,
