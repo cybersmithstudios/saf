@@ -3,7 +3,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { categories } from "@/data/categories";
 import ProductGrid from "@/components/collection/ProductGrid";
 import { ChevronRight } from "lucide-react";
-import { ScrollArea } from "@/components/ui/scroll-area";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
 const Collection = () => {
   return (
@@ -40,23 +40,26 @@ const Collection = () => {
 
         <Tabs defaultValue="all" className="w-full">
           <ScrollArea className="w-full pb-4 mb-4">
-            <TabsList className="flex w-max min-w-full justify-start gap-2 bg-transparent p-1">
-              <TabsTrigger 
-                value="all"
-                className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground whitespace-nowrap"
-              >
-                All Collections
-              </TabsTrigger>
-              {categories.map((category) => (
-                <TabsTrigger
-                  key={category.id}
-                  value={category.id}
-                  className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground whitespace-nowrap"
+            <div className="flex min-w-max">
+              <TabsList className="bg-transparent p-0 h-auto">
+                <TabsTrigger 
+                  value="all"
+                  className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground px-4 py-2"
                 >
-                  {category.name}
+                  All Collections
                 </TabsTrigger>
-              ))}
-            </TabsList>
+                {categories.map((category) => (
+                  <TabsTrigger
+                    key={category.id}
+                    value={category.id}
+                    className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground px-4 py-2"
+                  >
+                    {category.name}
+                  </TabsTrigger>
+                ))}
+              </TabsList>
+            </div>
+            <ScrollBar orientation="horizontal" />
           </ScrollArea>
 
           <div className="mb-8">
@@ -66,7 +69,7 @@ const Collection = () => {
                   <h2 className="text-2xl font-semibold mb-2">{category.name}</h2>
                   <p className="text-muted-foreground mb-4">{category.description}</p>
                   <ScrollArea className="w-full pb-4">
-                    <div className="flex w-max min-w-full gap-2">
+                    <div className="flex gap-2 min-w-max">
                       {category.subcategories.map((subcategory) => (
                         <button
                           key={subcategory.id}
@@ -76,6 +79,7 @@ const Collection = () => {
                         </button>
                       ))}
                     </div>
+                    <ScrollBar orientation="horizontal" />
                   </ScrollArea>
                 </div>
                 <ProductGrid category={category.id} />
