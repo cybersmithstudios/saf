@@ -1,7 +1,7 @@
-import { baseSetProducts } from "./base-sets";
-import { seatingSetProducts } from "./seating-sets";
+import { singleSetProducts } from './single-sets';
+import { seatingSetProducts } from './seating-sets';
 
 export const luganoProducts = [
-  ...baseSetProducts,
+  ...singleSetProducts,
   ...seatingSetProducts
 ];
