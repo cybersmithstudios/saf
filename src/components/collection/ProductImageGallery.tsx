@@ -15,6 +15,8 @@ const ProductImageGallery = ({ images, productName }: ProductImageGalleryProps) 
               src={image}
               alt={productName}
               className="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
             />
           </TabsContent>
         ))}
@@ -28,8 +30,10 @@ const ProductImageGallery = ({ images, productName }: ProductImageGalleryProps) 
           >
             <img
               src={image}
-              alt={productName}
+              alt={`${productName} thumbnail`}
               className="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
             />
           </TabsTrigger>
         ))}

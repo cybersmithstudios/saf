@@ -44,6 +44,8 @@ const ProductGrid = ({ category }: ProductGridProps) => {
                 src={product.images[0]}
                 alt={product.name}
                 className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110"
+                loading="lazy"
+                decoding="async"
               />
               <button
                 onClick={() => setSelectedProduct(product.id)}
