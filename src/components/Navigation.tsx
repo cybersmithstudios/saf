@@ -30,6 +30,8 @@ const Navigation = () => {
     };
   }, []);
 
+  const textColorClass = isScrolled ? "text-black" : "text-white";
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -49,10 +51,10 @@ const Navigation = () => {
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
-            <NavLinks />
+            <NavLinks textColorClass={textColorClass} />
             <Link 
               to="/enquiries" 
-              className="relative p-2 hover:bg-gray-100 rounded-full transition-colors"
+              className={`relative p-2 hover:bg-gray-100 hover:text-black rounded-full transition-colors ${textColorClass}`}
               aria-label="View Enquiries"
             >
               <ShoppingBag className="w-5 h-5" />
@@ -68,7 +70,7 @@ const Navigation = () => {
           </div>
 
           <button
-            className="md:hidden p-2 hover:bg-gray-100 rounded-full transition-colors"
+            className={`md:hidden p-2 hover:bg-gray-100 hover:text-black rounded-full transition-colors ${textColorClass}`}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
@@ -85,11 +87,11 @@ const Navigation = () => {
         >
           <div className="container mx-auto px-4 py-4">
             <div className="flex flex-col space-y-4">
-              <NavLinks mobile setIsMenuOpen={setIsMenuOpen} />
+              <NavLinks mobile setIsMenuOpen={setIsMenuOpen} textColorClass="text-black" />
               <Link
                 to="/enquiries"
                 onClick={() => setIsMenuOpen(false)}
-                className="flex items-center space-x-2 py-2"
+                className="flex items-center space-x-2 py-2 text-black"
               >
                 <ShoppingBag className="w-5 h-5" />
                 <span>Enquiries {items.length > 0 && `(${items.length})`}</span>
@@ -104,10 +106,12 @@ const Navigation = () => {
 
 const NavLinks = ({ 
   mobile = false, 
-  setIsMenuOpen = () => {} 
+  setIsMenuOpen = () => {},
+  textColorClass = "text-black"
 }: { 
   mobile?: boolean;
   setIsMenuOpen?: (value: boolean) => void;
+  textColorClass?: string;
 }) => {
   const links = [
     { name: "Home", path: "/" },
@@ -124,7 +128,7 @@ const NavLinks = ({
     }
   };
 
-  const baseClasses = "transition-colors hover:text-accent";
+  const baseClasses = `transition-colors hover:text-accent ${textColorClass}`;
   const mobileClasses = "block py-2";
   const desktopClasses = "inline-block";
 
