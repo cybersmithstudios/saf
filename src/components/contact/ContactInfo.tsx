@@ -1,6 +1,7 @@
 import { Mail, Phone, MapPin, Building2, Factory, Building } from "lucide-react";
 import { motion } from "framer-motion";
 
+
 const locations = [
   {
     title: "Warehouse",
@@ -89,7 +90,7 @@ const ContactInfo = () => {
         <div className="flex items-center space-x-4">
           <div className="w-32 h-32 bg-gray-200 rounded-lg flex items-center justify-center">
             {/* Replace with actual QR code */}
-            <span className="text-sm text-gray-500">QR Code</span>
+            <img src='/qr.png' alt="qrcode" />
           </div>
           <p className="text-sm text-gray-600">
             Scan to connect with our sales team instantly

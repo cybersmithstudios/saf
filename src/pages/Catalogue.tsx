@@ -47,7 +47,7 @@ const Catalogue = () => {
 
           <div className="aspect-[3/4] w-full mb-8 rounded-lg overflow-hidden shadow-lg">
             <iframe
-              src="https://drive.google.com/file/d/1jTMLqBJJ_Fj3c4kYbJQwjoWLuZrBLpNE/preview"
+              src="https://drive.google.com/file/d/1FRmM8q6EyPrQdtIqK15gM5x1JEq4ZDkO/preview"
               width="100%"
               height="100%"
               allow="autoplay"

@@ -5,7 +5,7 @@ const collections = [
   {
     title: "Lugano Sofas",
     description: "Modern comfort meets timeless design",
-    image: "",
+    image: "/lovable-uploads/5seater-1.jpg",
     link: "/collection?category=lugano",
   },
   {

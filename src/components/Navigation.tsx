@@ -1,60 +1,39 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ShoppingBag } from "lucide-react";
 import { useEnquiryStore } from "@/store/useEnquiryStore";
 import { Badge } from "@/components/ui/badge";
 
 const Navigation = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const { items } = useEnquiryStore();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
+  const handleClickOutside = (event: MouseEvent) => {
+    if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+      setIsMenuOpen(false);
+    }
+  };
 
-    const handleClickOutside = (event: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        setIsMenuOpen(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    document.addEventListener("mousedown", handleClickOutside);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
-  const textColorClass = isScrolled ? "text-black" : "text-white";
+  document.addEventListener("mousedown", handleClickOutside);
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-white/80 backdrop-blur-md shadow-sm"
-          : "bg-transparent"
-      }`}
-    >
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center">
             <img 
               src="/lovable-uploads/ad77b95c-9490-4209-9bd0-f70577109f68.png" 
               alt="SAF Logo" 
-              className="h-8 md:h-10"
+              className="h-12 md:h-10 w-30"
             />
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
-            <NavLinks textColorClass={textColorClass} />
+            <NavLinks />
             <Link 
               to="/enquiries" 
-              className={`relative p-2 hover:bg-gray-100 hover:text-black rounded-full transition-colors ${textColorClass}`}
+              className="relative p-2 hover:bg-gray-100 hover:text-black rounded-full transition-colors text-black"
               aria-label="View Enquiries"
             >
               <ShoppingBag className="w-5 h-5" />
@@ -70,7 +49,7 @@ const Navigation = () => {
           </div>
 
           <button
-            className={`md:hidden p-2 hover:bg-gray-100 hover:text-black rounded-full transition-colors ${textColorClass}`}
+            className="md:hidden p-2 hover:bg-gray-100 hover:text-black rounded-full transition-colors text-black"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
@@ -87,7 +66,7 @@ const Navigation = () => {
         >
           <div className="container mx-auto px-4 py-4">
             <div className="flex flex-col space-y-4">
-              <NavLinks mobile setIsMenuOpen={setIsMenuOpen} textColorClass="text-black" />
+              <NavLinks mobile setIsMenuOpen={setIsMenuOpen} />
               <Link
                 to="/enquiries"
                 onClick={() => setIsMenuOpen(false)}
@@ -106,12 +85,10 @@ const Navigation = () => {
 
 const NavLinks = ({ 
   mobile = false, 
-  setIsMenuOpen = () => {},
-  textColorClass = "text-black"
+  setIsMenuOpen = () => {}
 }: { 
   mobile?: boolean;
   setIsMenuOpen?: (value: boolean) => void;
-  textColorClass?: string;
 }) => {
   const links = [
     { name: "Home", path: "/" },
@@ -128,7 +105,7 @@ const NavLinks = ({
     }
   };
 
-  const baseClasses = `transition-colors hover:text-accent ${textColorClass}`;
+  const baseClasses = "transition-colors hover:text-accent text-black";
   const mobileClasses = "block py-2";
   const desktopClasses = "inline-block";
 
