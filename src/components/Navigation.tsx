@@ -25,7 +25,7 @@ const Navigation = () => {
             <img 
               src="/lovable-uploads/ad77b95c-9490-4209-9bd0-f70577109f68.png" 
               alt="SAF Logo" 
-              className="h-12 md:h-10 w-30"
+              className="h-16 md:h-10 w-34"
             />
           </Link>
 
