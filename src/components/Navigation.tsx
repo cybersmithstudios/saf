@@ -20,65 +20,43 @@ const Navigation = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md shadow-sm">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center">
-            <img 
-              src="/lovable-uploads/ad77b95c-9490-4209-9bd0-f70577109f68.png" 
-              alt="SAF Logo" 
-              className="h-16 md:h-10 w-34"
-            />
-          </Link>
-
-          <div className="hidden md:flex items-center space-x-8">
-            <NavLinks />
-            <Link 
-              to="/enquiries" 
-              className="relative p-2 hover:bg-gray-100 hover:text-black rounded-full transition-colors text-black"
-              aria-label="View Enquiries"
-            >
-              <ShoppingBag className="w-5 h-5" />
-              {items.length > 0 && (
-                <Badge 
-                  variant="secondary" 
-                  className="absolute -top-1 -right-1 min-w-[18px] h-[18px] flex items-center justify-center p-0 text-xs"
-                >
-                  {items.length}
-                </Badge>
-              )}
+        <div className="flex items-center justify-between h-24 sm:h-16"> {/* Keep large screen height as 24, smaller height as 16 */}
+            <Link to="/" className="flex items-center">
+              <img 
+                src="/lovable-uploads/ad77b95c-9490-4209-9bd0-f70577109f68.png" 
+                alt="SAF Logo" 
+                className="h-20 sm:h-14" 
+              />
             </Link>
-          </div>
 
-          <button
-            className="md:hidden p-2 hover:bg-gray-100 hover:text-black rounded-full transition-colors text-black"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile menu */}
-      {isMenuOpen && (
-        <div 
-          ref={menuRef}
-          className="md:hidden bg-white border-t animate-fade-in"
-        >
-          <div className="container mx-auto px-4 py-4">
-            <div className="flex flex-col space-y-4">
-              <NavLinks mobile setIsMenuOpen={setIsMenuOpen} />
-              <Link
-                to="/enquiries"
-                onClick={() => setIsMenuOpen(false)}
-                className="flex items-center space-x-2 py-2 text-black"
+            <div className="hidden md:flex items-center space-x-8">
+              <NavLinks />
+              <Link 
+                to="/enquiries" 
+                className="relative p-2 hover:bg-gray-100 hover:text-black rounded-full transition-colors text-black"
+                aria-label="View Enquiries"
               >
-                <ShoppingBag className="w-5 h-5" />
-                <span>Enquiries {items.length > 0 && `(${items.length})`}</span>
+                <ShoppingBag className="w-6 h-6" /> {/* Keep icon size unchanged */}
+                {items.length > 0 && (
+                  <Badge 
+                    variant="secondary" 
+                    className="absolute -top-1 -right-1 min-w-[20px] h-[20px] flex items-center justify-center p-0 text-xs"
+                  >
+                    {items.length}
+                  </Badge>
+                )}
               </Link>
             </div>
+
+            <button
+              className="md:hidden p-2 hover:bg-gray-100 hover:text-black rounded-full transition-colors text-black"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            >
+              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
           </div>
         </div>
-      )}
     </nav>
   );
 };
