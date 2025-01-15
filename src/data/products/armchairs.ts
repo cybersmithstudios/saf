@@ -7,16 +7,11 @@ export const armchairProducts = [
     subcategoryId: "malibu",
     description: "The Malibu chair combines modern design with exceptional comfort.",
     images: [
-      "/lovable-uploads/4ac84e4a-2c20-4076-83be-33777c97db21.png",
-      "/lovable-uploads/094b790e-b3e1-4ae6-b9fd-c290e1713110.png",
-      "/lovable-uploads/d4dc3059-7362-4bfe-bddc-1ecf69309db7.png",
-      "/lovable-uploads/915198ed-7d27-46dd-baad-0896ed48e4b8.png",
-      "/lovable-uploads/bc98d792-d7d2-44c9-bb8c-582edd22f4ef.png",
-      "/lovable-uploads/098fdf69-bb44-4023-b429-c125bf88ff47.png",
-      "/lovable-uploads/f0d1c09d-4204-49b3-a114-d13bca6f79b6.png",
-      "/lovable-uploads/69762880-6e01-4aac-a96a-ebed4e4303b9.png",
-      "/lovable-uploads/b1103cfe-3142-451b-bbf9-ee6ff92bc496.png",
-      "/lovable-uploads/a2fefa0f-bf9e-463e-983e-0fdb7437a8ac.png"
+      "/lovable-uploads/malibu-1.jpeg",
+      "/lovable-uploads/malibu-2.jpeg",
+      "/lovable-uploads/a2fefa0f-bf9e-463e-983e-0fdb7437a8ac.png",
+      "/lovable-uploads/bc98d792-d7d2-44c9-bb8c-582edd22f4ef.png"
+      
     ],
     dimensions: {
       width: 75,

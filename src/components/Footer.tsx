@@ -64,7 +64,7 @@ const Footer = () => {
         </div>
         
         <div className="mt-12 pt-8 border-t border-gray-700 text-center text-sm">
-          <p>&copy; {new Date().getFullYear()} SAF. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Black Horse Plastics Ind. Ltd.</p>
         </div>
       </div>
     </footer>
