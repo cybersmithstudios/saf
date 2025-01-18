@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ShoppingBag } from "lucide-react";
 import { useEnquiryStore } from "@/store/useEnquiryStore";
@@ -9,13 +9,16 @@ const Navigation = () => {
   const menuRef = useRef<HTMLDivElement>(null);
   const { items } = useEnquiryStore();
 
-  const handleClickOutside = (event: MouseEvent) => {
-    if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-      setIsMenuOpen(false);
-    }
-  };
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsMenuOpen(false);
+      }
+    };
 
-  document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md shadow-sm">
@@ -25,7 +28,7 @@ const Navigation = () => {
               <img 
                 src="/lovable-uploads/ad77b95c-9490-4209-9bd0-f70577109f68.png" 
                 alt="SAF Logo" 
-                className="h-12 sm:h-24 md:h-28 transition-all duration-200" 
+                className="h-12 sm:h-16 md:h-20 transition-all duration-200" 
               />
             </Link>
 
@@ -55,8 +58,31 @@ const Navigation = () => {
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
-          </div>
         </div>
+
+        {/* Mobile menu */}
+        {isMenuOpen && (
+          <div
+            ref={menuRef}
+            className="absolute top-full left-0 right-0 bg-white shadow-lg py-4 px-4 md:hidden animate-fade-in"
+          >
+            <div className="flex flex-col space-y-4">
+              <NavLinks mobile={true} setIsMenuOpen={setIsMenuOpen} />
+              <Link 
+                to="/enquiries"
+                className="flex items-center space-x-2 py-2 text-black"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <ShoppingBag className="w-6 h-6" />
+                <span>Enquiries</span>
+                {items.length > 0 && (
+                  <Badge variant="secondary">{items.length}</Badge>
+                )}
+              </Link>
+            </div>
+          </div>
+        )}
+      </div>
     </nav>
   );
 };
