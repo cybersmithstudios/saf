@@ -20,12 +20,12 @@ const Navigation = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md shadow-sm">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-24 sm:h-16"> {/* Keep large screen height as 24, smaller height as 16 */}
+        <div className="flex items-center justify-between h-24 sm:h-16">
             <Link to="/" className="flex items-center">
               <img 
                 src="/lovable-uploads/ad77b95c-9490-4209-9bd0-f70577109f68.png" 
                 alt="SAF Logo" 
-                className="h-20 sm:h-14" 
+                className="h-12 sm:h-24 md:h-28 transition-all duration-200" 
               />
             </Link>
 
@@ -36,7 +36,7 @@ const Navigation = () => {
                 className="relative p-2 hover:bg-gray-100 hover:text-black rounded-full transition-colors text-black"
                 aria-label="View Enquiries"
               >
-                <ShoppingBag className="w-6 h-6" /> {/* Keep icon size unchanged */}
+                <ShoppingBag className="w-6 h-6" />
                 {items.length > 0 && (
                   <Badge 
                     variant="secondary" 
