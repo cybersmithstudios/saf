@@ -1,69 +1,66 @@
-# Welcome to your Lovable project
 
-## Project info
+# SAF Furniture Website
 
-**URL**: https://lovable.dev/projects/48980439-b4d4-4241-b167-3be18f555c35
+A modern e-commerce website for Self Assembly Furniture (SAF), a proud subsidiary of Black Horse Plastics Ind. Ltd. The website showcases their collection of high-quality plastic rattan-style furniture.
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+- 📱 Fully responsive design
+- 🛋️ Product catalog with detailed views
+- 🛒 Enquiry system for products
+- 📋 Custom order forms
+- 📱 WhatsApp integration for direct communication
+- 📬 Newsletter subscription
+- 🗺️ Distributor locations
+- 📱 Mobile-friendly navigation
 
-**Use Lovable**
+## Built With
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/48980439-b4d4-4241-b167-3be18f555c35) and start prompting.
+- React
+- TypeScript
+- Tailwind CSS
+- Shadcn/ui
+- Framer Motion
+- React Router
+- Zustand (for state management)
 
-Changes made via Lovable will be committed automatically to this repo.
+## Getting Started
 
-**Use your preferred IDE**
+To run this project locally:
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+```bash
+# Clone the repository
+git clone [your-repo-url]
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+# Navigate to project directory
+cd saf-furniture
 
-Follow these steps:
+# Install dependencies
+npm install
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Project Structure
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```
+src/
+├── components/        # Reusable UI components
+├── pages/            # Page components
+├── store/            # State management
+├── data/            # Static data and configurations
+├── types/           # TypeScript type definitions
+└── hooks/           # Custom React hooks
+```
 
-**Use GitHub Codespaces**
+## Contact Information
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+For inquiries about SAF Furniture:
+- Email: info@saf-furniture.com
+- Phone: 07 007 007 007
+- Address: 11A Idejo Street, Off Adeola Odeku, Victoria Island, Lagos
 
-## What technologies are used for this project?
+## License
 
-This project is built with .
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/48980439-b4d4-4241-b167-3be18f555c35) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+All rights reserved © 2024 Black Horse Plastics Ind. Ltd.
