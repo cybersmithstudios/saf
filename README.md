@@ -30,7 +30,7 @@ To run this project locally:
 
 ```bash
 # Clone the repository
-git clone [your-repo-url]
+git clone https://github.com/cybersmithstudios/saf.git
 
 # Navigate to project directory
 cd saf-furniture
