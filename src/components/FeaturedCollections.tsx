@@ -11,7 +11,7 @@ const collections = [
   {
     title: "Malibu Chairs",
     description: "Modern seating solutions",
-    image: "/lovable-uploads/4ac84e4a-2c20-4076-83be-33777c97db21.png",
+    image: "/lovable-uploads/malibu-1.jpeg",
     link: "/collection?category=armchairs",
   },
   {
