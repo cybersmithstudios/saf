@@ -5,7 +5,7 @@ const promotions = [
   {
     icon: <Truck className="w-6 h-6" />,
     title: "Free Delivery in Lagos",
-    description: "On orders over  ₦350,000",
+    description: "On orders over  ₦450,000",
   },
   {
     icon: <Tag className="w-6 h-6" />,
