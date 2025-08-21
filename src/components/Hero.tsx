@@ -4,9 +4,10 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const images = [
-  "/lovable-uploads/a8da254f-5897-46a4-a272-e5e5e4b75b2f.png",
-  "/lovable-uploads/1b70a7df-1769-4c98-9b20-df28190119e1.png",
-  "/lovable-uploads/daa08640-17ed-457e-aba0-510af7983093.png",
+  "/lovable-uploads/image-small-1693319929-668.jpg",
+  "/lovable-uploads/image-small-1693477363-4001.jpg",
+  "/lovable-uploads/image-small-1693317179-9880.jpg",
+  "/lovable-uploads/image-small-1693319885-312.jpg",
 ];
 
 const Hero = () => {
