@@ -12,21 +12,21 @@ const resources: Resource[] = [
     title: "Product models",
     description:
       "Download models for your space-planning apps, including Revit and AutoCAD.",
-    image: "/lovable-uploads/093c3430-a896-4168-8cd5-8c9fd3bc3097.png",
+    image: "/lovable-uploads/product models.png",
     href: "/collection",
   },
   {
     title: "Images",
     description:
       "Explore our image library and download the ones you need to use.",
-    image: "/lovable-uploads/098fdf69-bb44-4023-b429-c125bf88ff47.png",
+    image: "/lovable-uploads/image-small-1693319172-7411.jpg",
     href: "/collection",
   },
   {
     title: "Materials",
     description:
       "Browse textiles, finishes, laminates, woods and veneers.",
-    image: "/lovable-uploads/50c08f5b-9a56-462f-8bed-920b6b0227d6.png",
+    image: "/lovable-uploads/materials.png",
     href: "/collection",
   },
 ];

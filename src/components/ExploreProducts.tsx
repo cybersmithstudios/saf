@@ -9,22 +9,22 @@ type Tile = {
 const tiles: Tile[] = [
   {
     title: "Sofas",
-    image: "/lovable-uploads/5seater-2.jpg",
+    image: "/lovable-uploads/sofas.png",
     href: "/collection?category=lugano",
   },
   {
     title: "Armchairs",
-    image: "/lovable-uploads/malibu-2.jpeg",
+    image: "/lovable-uploads/armchairs.png",
     href: "/collection?category=armchairs",
   },
   {
     title: "Loungers",
-    image: "/lovable-uploads/7seater-3.jpg".replace("7seater-3.jpg", "6seater-3.jpg"),
+    image: "/lovable-uploads/loungers1.png",
     href: "/collection?category=loungers",
   },
   {
     title: "Rattan",
-    image: "/lovable-uploads/84a43ce2-bedb-4b1b-9767-076f4a67eeb4.png",
+    image: "/lovable-uploads/rattan1.png",
     href: "/collection?category=weaved-rattan",
   },
 ];
