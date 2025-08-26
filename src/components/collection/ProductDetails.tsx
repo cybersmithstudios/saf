@@ -56,7 +56,7 @@ const ProductDetails = ({ product, onEnquiry }: ProductDetailsProps) => {
       </div>
 
       <Button onClick={onEnquiry} className="w-full">
-        Add to Enquiry
+        Close
       </Button>
     </div>
   );

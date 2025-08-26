@@ -11,9 +11,12 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Collection from "./pages/Collection";
-import Enquiries from "./pages/Enquiries";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Catalogue from "./pages/Catalogue";
+import SafAdvantage from "./pages/SafAdvantage";
+import Distributors from "./pages/Distributors";
+import ECatalogue from "./pages/ECatalogue";
+import CategoryTemplate from "./pages/CategoryTemplate";
 
 const queryClient = new QueryClient();
 
@@ -40,9 +43,12 @@ const App = () => {
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/collection" element={<Collection />} />
-                <Route path="/enquiries" element={<Enquiries />} />
+                <Route path="/collection/:slug" element={<CategoryTemplate />} />
+                <Route path="/saf-advantage" element={<SafAdvantage />} />
+                <Route path="/distributors" element={<Distributors />} />
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                 <Route path="/catalogue" element={<Catalogue />} />
+                <Route path="/e-catalogue" element={<ECatalogue />} />
               </Routes>
             </main>
             <Footer />

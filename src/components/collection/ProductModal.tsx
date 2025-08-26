@@ -4,10 +4,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
 import { products } from "@/data/products";
-import { useToast } from "@/components/ui/use-toast";
-import { useEnquiryStore } from "@/store/useEnquiryStore";
 import { useEffect } from "react";
 import ProductImageGallery from "./ProductImageGallery";
 import ProductDetails from "./ProductDetails";
@@ -18,8 +15,6 @@ interface ProductModalProps {
 }
 
 const ProductModal = ({ productId, onClose }: ProductModalProps) => {
-  const { toast } = useToast();
-  const addItem = useEnquiryStore((state) => state.addItem);
   const product = products.find((p) => p.id === productId);
 
   useEffect(() => {
@@ -36,11 +31,6 @@ const ProductModal = ({ productId, onClose }: ProductModalProps) => {
   if (!product) return null;
 
   const handleEnquiry = () => {
-    addItem(product);
-    toast({
-      title: "Added to enquiry",
-      description: `${product.name} has been added to your enquiry list.`,
-    });
     onClose();
   };
 

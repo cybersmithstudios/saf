@@ -3,8 +3,6 @@ import { Plus, Eye } from "lucide-react";
 import { useState } from "react";
 import ProductModal from "./ProductModal";
 import { products } from "@/data/products";
-import { useToast } from "@/components/ui/use-toast";
-import { useEnquiryStore } from "@/store/useEnquiryStore";
 import { Button } from "@/components/ui/button";
 
 interface ProductGridProps {
@@ -13,20 +11,13 @@ interface ProductGridProps {
 
 const ProductGrid = ({ category }: ProductGridProps) => {
   const [selectedProduct, setSelectedProduct] = useState<string | null>(null);
-  const { toast } = useToast();
-  const addItem = useEnquiryStore((state) => state.addItem);
+  
 
   const filteredProducts = category === "all" 
     ? products 
     : products.filter(product => product.categoryId === category);
 
-  const handleEnquiry = (product: typeof products[0]) => {
-    addItem(product);
-    toast({
-      title: "Added to enquiry",
-      description: `${product.name} has been added to your enquiry list.`,
-    });
-  };
+  
 
   return (
     <>
@@ -63,7 +54,7 @@ const ProductGrid = ({ category }: ProductGridProps) => {
                 size="icon"
                 onClick={(e) => {
                   e.stopPropagation();
-                  handleEnquiry(product);
+                  setSelectedProduct(product.id);
                 }}
                 className="rounded-full"
               >

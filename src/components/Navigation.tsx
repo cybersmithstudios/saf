@@ -1,13 +1,11 @@
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, ShoppingBag } from "lucide-react";
-import { useEnquiryStore } from "@/store/useEnquiryStore";
-import { Badge } from "@/components/ui/badge";
+import { Menu, X, ChevronDown } from "lucide-react";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
-  const { items } = useEnquiryStore();
+  
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -34,21 +32,6 @@ const Navigation = () => {
 
             <div className="hidden md:flex items-center space-x-8">
               <NavLinks />
-              <Link 
-                to="/enquiries" 
-                className="relative p-2 hover:bg-gray-100 hover:text-black rounded-full transition-colors text-black"
-                aria-label="View Enquiries"
-              >
-                <ShoppingBag className="w-6 h-6" />
-                {items.length > 0 && (
-                  <Badge 
-                    variant="secondary" 
-                    className="absolute -top-1 -right-1 min-w-[20px] h-[20px] flex items-center justify-center p-0 text-xs"
-                  >
-                    {items.length}
-                  </Badge>
-                )}
-              </Link>
             </div>
 
             <button
@@ -68,17 +51,6 @@ const Navigation = () => {
           >
             <div className="flex flex-col space-y-4">
               <NavLinks mobile={true} setIsMenuOpen={setIsMenuOpen} />
-              <Link 
-                to="/enquiries"
-                className="flex items-center space-x-2 py-2 text-black"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <ShoppingBag className="w-6 h-6" />
-                <span>Enquiries</span>
-                {items.length > 0 && (
-                  <Badge variant="secondary">{items.length}</Badge>
-                )}
-              </Link>
             </div>
           </div>
         )}
@@ -94,40 +66,93 @@ const NavLinks = ({
   mobile?: boolean;
   setIsMenuOpen?: (value: boolean) => void;
 }) => {
-  const links = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Collection", path: "/collection" },
-    { name: "Distributors", path: "/distributors" },
-    { name: "Contact", path: "/contact" },
-    { name: "Catalogue", path: "/catalogue" },
-  ];
-
-  const handleClick = () => {
-    if (mobile) {
-      setIsMenuOpen(false);
-    }
+  const closeIfMobile = () => {
+    if (mobile) setIsMenuOpen(false);
   };
 
   const baseClasses = "transition-colors hover:text-accent text-black";
   const mobileClasses = "block py-2";
   const desktopClasses = "inline-block";
 
+  const advantageItems = [
+    { name: "How to Assemble", path: "/saf-advantage#assemble" },
+    { name: "Benefits / Features of SAF", path: "/saf-advantage#benefits" },
+    { name: "Highlights", path: "/saf-advantage#highlights" },
+    { name: "About Us", path: "/saf-advantage#about" },
+  ];
+
+  const collectionItems = [
+    { name: "Outdoors", path: "/collection/outdoors" },
+    { name: "Indoors", path: "/collection/indoors" },
+    { name: "Restaurants", path: "/collection/restaurants" },
+    { name: "Hotels", path: "/collection/hotels" },
+    { name: "Commercial", path: "/collection/commercial" },
+    { name: "Residential", path: "/collection/residential" },
+    { name: "Lounges", path: "/collection/lounges" },
+    { name: "Export", path: "/collection/export" },
+  ];
+
+  if (mobile) {
+    return (
+      <div>
+        <Link to="/" onClick={closeIfMobile} className={`${baseClasses} ${mobileClasses}`}>Home</Link>
+        <Link to="/saf-advantage" onClick={closeIfMobile} className={`${baseClasses} ${mobileClasses}`}>SAF Advantage</Link>
+        <div className="pl-4">
+          {advantageItems.map((item) => (
+            <Link key={item.name} to={item.path} onClick={closeIfMobile} className={`${baseClasses} ${mobileClasses}`}>
+              {item.name}
+            </Link>
+          ))}
+        </div>
+        <Link to="/collection" onClick={closeIfMobile} className={`${baseClasses} ${mobileClasses}`}>Collection</Link>
+        <div className="pl-4">
+          {collectionItems.map((item) => (
+            <Link key={item.name} to={item.path} onClick={closeIfMobile} className={`${baseClasses} ${mobileClasses}`}>
+              {item.name}
+            </Link>
+          ))}
+        </div>
+        <Link to="/distributors" onClick={closeIfMobile} className={`${baseClasses} ${mobileClasses}`}>Distributors</Link>
+        <Link to="/contact" onClick={closeIfMobile} className={`${baseClasses} ${mobileClasses}`}>Contact</Link>
+        <Link to="/e-catalogue" onClick={closeIfMobile} className={`${baseClasses} ${mobileClasses}`}>E-Catalogue</Link>
+      </div>
+    );
+  }
+
   return (
-    <>
-      {links.map((link) => (
-        <Link
-          key={link.name}
-          to={link.path}
-          onClick={handleClick}
-          className={`${baseClasses} ${
-            mobile ? mobileClasses : desktopClasses
-          }`}
-        >
-          {link.name}
+    <div className="flex items-center space-x-6">
+      <Link to="/" className={`${baseClasses} ${desktopClasses}`}>Home</Link>
+
+      <div className="relative group">
+        <Link to="/saf-advantage" className={`${baseClasses} ${desktopClasses} flex items-center gap-1`}>
+          SAF Advantage <ChevronDown className="w-4 h-4" />
         </Link>
-      ))}
-    </>
+        <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-opacity absolute top-full left-0 bg-white shadow-md rounded-md py-2 min-w-[220px] z-50">
+          {advantageItems.map((item) => (
+            <Link key={item.name} to={item.path} className="block px-4 py-2 hover:bg-gray-50 text-black" onClick={closeIfMobile}>
+              {item.name}
+            </Link>
+          ))}
+        </div>
+      </div>
+
+      <div className="relative group">
+        <Link to="/collection" className={`${baseClasses} ${desktopClasses} flex items-center gap-1`}>
+          Collection <ChevronDown className="w-4 h-4" />
+        </Link>
+        <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-opacity absolute top-full left-0 bg-white shadow-md rounded-md py-2 min-w-[220px] z-50">
+          {collectionItems.map((item) => (
+            <Link key={item.name} to={item.path} className="block px-4 py-2 hover:bg-gray-50 text-black" onClick={closeIfMobile}>
+              {item.name}
+            </Link>
+          ))}
+        </div>
+      </div>
+
+      <Link to="/distributors" className={`${baseClasses} ${desktopClasses}`}>Distributors</Link>
+      <Link to="/contact" className={`${baseClasses} ${desktopClasses}`}>Contact</Link>
+      <Link to="/e-catalogue" className={`${baseClasses} ${desktopClasses}`}>E-Catalogue</Link>
+    </div>
   );
 };
 
