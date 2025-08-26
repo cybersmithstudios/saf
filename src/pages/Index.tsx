@@ -1,4 +1,3 @@
-import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import FeaturedCollections from "@/components/FeaturedCollections";
 import Promotions from "@/components/Promotions";
@@ -7,16 +6,18 @@ import TopCustomers from "@/components/TopCustomers";
 import ExploreProducts from "@/components/ExploreProducts";
 import DesignerResources from "@/components/DesignerResources";
 import BrandStatement from "@/components/BrandStatement";
+import ForUseIn from "@/components/ForUseIn";
 
 const Index = () => {
   return (
     <main className="min-h-screen">
-      <Navigation />
       <Hero />
+      
       <ExploreProducts />
       <TopCustomers />
       <Promotions />
       <DesignerResources />
+      <ForUseIn />
       <FeaturedCollections />
       <BrandStatement />
       <Newsletter />

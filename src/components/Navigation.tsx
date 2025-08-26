@@ -19,7 +19,7 @@ const Navigation = () => {
   }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md shadow-sm">
+    <nav className="fixed left-0 right-0 z-40 bg-white/80 backdrop-blur-md shadow-sm" style={{ top: 'var(--banner-height, 40px)' }}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-24 sm:h-16">
             <Link to="/" className="flex items-center">
@@ -66,6 +66,8 @@ const NavLinks = ({
   mobile?: boolean;
   setIsMenuOpen?: (value: boolean) => void;
 }) => {
+  const [openAdv, setOpenAdv] = useState(false);
+  const [openCol, setOpenCol] = useState(false);
   const closeIfMobile = () => {
     if (mobile) setIsMenuOpen(false);
   };
@@ -94,24 +96,43 @@ const NavLinks = ({
 
   if (mobile) {
     return (
-      <div>
+      <div className="divide-y divide-gray-100">
         <Link to="/" onClick={closeIfMobile} className={`${baseClasses} ${mobileClasses}`}>Home</Link>
-        <Link to="/saf-advantage" onClick={closeIfMobile} className={`${baseClasses} ${mobileClasses}`}>SAF Advantage</Link>
-        <div className="pl-4">
-          {advantageItems.map((item) => (
-            <Link key={item.name} to={item.path} onClick={closeIfMobile} className={`${baseClasses} ${mobileClasses}`}>
-              {item.name}
-            </Link>
-          ))}
-        </div>
-        <Link to="/collection" onClick={closeIfMobile} className={`${baseClasses} ${mobileClasses}`}>Collection</Link>
-        <div className="pl-4">
-          {collectionItems.map((item) => (
-            <Link key={item.name} to={item.path} onClick={closeIfMobile} className={`${baseClasses} ${mobileClasses}`}>
-              {item.name}
-            </Link>
-          ))}
-        </div>
+
+        <button
+          onClick={() => setOpenAdv(!openAdv)}
+          className={`w-full text-left ${baseClasses} ${mobileClasses} flex items-center justify-between`}
+        >
+          <span>SAF Advantage</span>
+          <ChevronDown className={`w-4 h-4 transition-transform ${openAdv ? 'rotate-180' : ''}`} />
+        </button>
+        {openAdv && (
+          <div className="pl-4 pb-2 space-y-1">
+            {advantageItems.map((item) => (
+              <Link key={item.name} to={item.path} onClick={closeIfMobile} className={`${baseClasses} block py-1`}>
+                {item.name}
+              </Link>
+            ))}
+          </div>
+        )}
+
+        <button
+          onClick={() => setOpenCol(!openCol)}
+          className={`w-full text-left ${baseClasses} ${mobileClasses} flex items-center justify-between`}
+        >
+          <span>Collection</span>
+          <ChevronDown className={`w-4 h-4 transition-transform ${openCol ? 'rotate-180' : ''}`} />
+        </button>
+        {openCol && (
+          <div className="pl-4 pb-2 grid grid-cols-1 gap-1">
+            {collectionItems.map((item) => (
+              <Link key={item.name} to={item.path} onClick={closeIfMobile} className={`${baseClasses} block py-1`}>
+                {item.name}
+              </Link>
+            ))}
+          </div>
+        )}
+
         <Link to="/distributors" onClick={closeIfMobile} className={`${baseClasses} ${mobileClasses}`}>Distributors</Link>
         <Link to="/contact" onClick={closeIfMobile} className={`${baseClasses} ${mobileClasses}`}>Contact</Link>
         <Link to="/e-catalogue" onClick={closeIfMobile} className={`${baseClasses} ${mobileClasses}`}>E-Catalogue</Link>

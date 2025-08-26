@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import Intercom from "@intercom/messenger-js-sdk";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
+import TopBanner from "./components/TopBanner";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -17,6 +18,7 @@ import SafAdvantage from "./pages/SafAdvantage";
 import Distributors from "./pages/Distributors";
 import ECatalogue from "./pages/ECatalogue";
 import CategoryTemplate from "./pages/CategoryTemplate";
+import Offers from "./pages/Offers";
 
 const queryClient = new QueryClient();
 
@@ -36,6 +38,7 @@ const App = () => {
         <Sonner />
         <BrowserRouter>
           <div className="flex flex-col min-h-screen">
+            <TopBanner />
             <Navigation />
             <main className="flex-grow">
               <Routes>
@@ -49,6 +52,7 @@ const App = () => {
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                 <Route path="/catalogue" element={<Catalogue />} />
                 <Route path="/e-catalogue" element={<ECatalogue />} />
+                <Route path="/offers" element={<Offers />} />
               </Routes>
             </main>
             <Footer />
