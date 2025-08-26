@@ -16,17 +16,17 @@ const duplicatedLogos = [...customerLogos, ...customerLogos, ...customerLogos, .
 
 const TopCustomers: React.FC = () => {
   return (
-    <section className="py-12">
-      <div className="container">
-        <h2 className="text-center text-sm uppercase tracking-widest text-muted-foreground mb-6">Our SAF Brand Collection</h2>
+    <section className="py-8 md:py-12">
+      <div className="container px-4">
+        <h2 className="text-center text-xs md:text-sm uppercase tracking-widest text-muted-foreground mb-4 md:mb-6">Our SAF Brand Collection</h2>
         <div className="relative overflow-hidden">
-          <div className="flex gap-16 animate-marquee will-change-transform" aria-hidden="true">
+          <div className="flex gap-10 md:gap-16 animate-marquee will-change-transform" aria-hidden="true">
             {duplicatedLogos.map((src, idx) => (
               <div key={idx} className="shrink-0 flex items-center">
                 <img
                   src={src}
                   alt="SAF logo"
-                  className="h-16 w-auto opacity-90 grayscale hover:grayscale-0 hover:opacity-100 transition duration-300"
+                  className="h-10 md:h-16 w-auto opacity-90 grayscale hover:grayscale-0 hover:opacity-100 transition duration-300"
                   loading="lazy"
                   height={64}
                 />

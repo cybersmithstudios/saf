@@ -21,9 +21,9 @@ const promotions = [
 
 const Promotions = () => {
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-12 md:py-16 bg-gray-50">
       <div className="container px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
           {promotions.map((promo, index) => (
             <motion.div
               key={promo.title}
@@ -31,13 +31,13 @@ const Promotions = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="flex flex-col items-center text-center p-6 bg-white rounded-2xl shadow-sm"
+              className="flex flex-col items-center text-center p-5 md:p-6 bg-white rounded-2xl shadow-sm"
             >
-              <div className="mb-4 p-3 bg-primary/5 rounded-full text-primary">
+              <div className="mb-3 md:mb-4 p-2.5 md:p-3 bg-primary/5 rounded-full text-primary">
                 {promo.icon}
               </div>
-              <h3 className="text-lg font-semibold mb-2">{promo.title}</h3>
-              <p className="text-gray-600">{promo.description}</p>
+              <h3 className="text-base md:text-lg font-semibold mb-1 md:mb-2">{promo.title}</h3>
+              <p className="text-sm md:text-base text-gray-600">{promo.description}</p>
             </motion.div>
           ))}
         </div>

@@ -24,15 +24,15 @@ const collections = [
 
 const FeaturedCollections = () => {
   return (
-    <section className="py-24 bg-gray-50">
+    <section className="py-14 md:py-24 bg-gray-50">
       <div className="container px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 md:mb-16">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="inline-block px-4 py-1.5 mb-4 text-sm font-medium bg-primary/5 text-primary rounded-full"
+            className="inline-block px-3 md:px-4 py-1.5 mb-3 md:mb-4 text-xs md:text-sm font-medium bg-primary/5 text-primary rounded-full"
           >
             Featured Collections
           </motion.span>
@@ -41,13 +41,13 @@ const FeaturedCollections = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-3xl md:text-4xl font-bold mb-4"
+            className="text-2xl md:text-4xl font-bold mb-3 md:mb-4"
           >
             Discover Our Latest Designs
           </motion.h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
           {collections.map((collection, index) => (
             <motion.div
               key={collection.title}
@@ -64,14 +64,14 @@ const FeaturedCollections = () => {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-6 text-white">
-                <h3 className="text-xl font-bold mb-2">{collection.title}</h3>
-                <p className="text-sm text-gray-200 mb-4">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-4 md:p-6 text-white">
+                <h3 className="text-lg md:text-xl font-bold mb-1 md:mb-2">{collection.title}</h3>
+                <p className="text-xs md:text-sm text-gray-200 mb-3 md:mb-4">
                   {collection.description}
                 </p>
                 <Link
                   to={collection.link}
-                  className="inline-block w-fit px-4 py-2 bg-white/10 hover:bg-white/20 rounded-full backdrop-blur-sm transition-all duration-300"
+                  className="inline-block w-fit px-3 md:px-4 py-1.5 md:py-2 bg-white/10 hover:bg-white/20 rounded-full backdrop-blur-sm transition-all duration-300 text-sm"
                 >
                   View Collection
                 </Link>

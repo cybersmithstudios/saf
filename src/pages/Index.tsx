@@ -12,7 +12,6 @@ const Index = () => {
   return (
     <main className="min-h-screen">
       <Hero />
-      
       <ExploreProducts />
       <TopCustomers />
       <Promotions />

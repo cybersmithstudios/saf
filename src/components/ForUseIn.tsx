@@ -24,13 +24,13 @@ const ForUseIn = () => {
   ];
 
   return (
-    <section className="container mx-auto px-4 py-16">
-      <div className="flex items-end justify-between mb-6">
-        <h2 className="text-2xl md:text-3xl font-semibold text-black">For Use In:</h2>
+    <section className="container mx-auto px-4 py-12 md:py-16">
+      <div className="flex items-end justify-between mb-4 md:mb-6">
+        <h2 className="text-xl md:text-3xl font-semibold text-black">For Use In:</h2>
         <p className="hidden md:block text-sm text-muted-foreground">Explore use cases and spaces</p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 auto-rows-[180px] md:auto-rows-[220px] lg:auto-rows-[160px] gap-4 md:gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 auto-rows-[150px] md:auto-rows-[220px] lg:auto-rows-[160px] gap-3 md:gap-6">
         {items.map((item, idx) => (
           <Link
             key={item.slug}
