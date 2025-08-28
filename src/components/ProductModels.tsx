@@ -28,12 +28,40 @@ const buildLuganoTableSteps = (): Step[] => {
   }));
 };
 
+const buildLuganoSingleSteps = (): Step[] => {
+  return Array.from({ length: 7 }).map((_, idx) => {
+    const stepNumber = idx + 1;
+    return {
+      src: `/Lugano Single Setup/${stepNumber}.png`,
+      caption: `Step ${stepNumber}`,
+    } as Step;
+  });
+};
+
+const buildSantoriniArmchairSteps = (): Step[] => {
+  return Array.from({ length: 8 }).map((_, idx) => {
+    const stepNumber = idx + 1;
+    return {
+      src: `/Santorini Armchair Setup/${stepNumber}.png`,
+      caption: `Step ${stepNumber}`,
+    } as Step;
+  });
+};
+
 const ProductModels = () => {
   const groups: SetupGroup[] = useMemo(
     () => [
       {
         title: "Lugano table setup",
         steps: buildLuganoTableSteps(),
+      },
+      {
+        title: "Lugano Single Setup",
+        steps: buildLuganoSingleSteps(),
+      },
+      {
+        title: "Santorini Armchair Setup",
+        steps: buildSantoriniArmchairSteps(),
       },
       {
         title: "2seater Lugano setup",
