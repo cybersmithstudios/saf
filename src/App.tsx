@@ -19,6 +19,7 @@ import Distributors from "./pages/Distributors";
 import ECatalogue from "./pages/ECatalogue";
 import CategoryTemplate from "./pages/CategoryTemplate";
 import Offers from "./pages/Offers";
+import ProductModelsPage from "./pages/ProductModels";
 
 const queryClient = new QueryClient();
 
@@ -53,6 +54,7 @@ const App = () => {
                 <Route path="/catalogue" element={<Catalogue />} />
                 <Route path="/e-catalogue" element={<ECatalogue />} />
                 <Route path="/offers" element={<Offers />} />
+                <Route path="/product-models" element={<ProductModelsPage />} />
               </Routes>
             </main>
             <Footer />

@@ -13,7 +13,7 @@ const resources: Resource[] = [
     description:
       "Download models for your space-planning apps, including Revit and AutoCAD.",
     image: "/lovable-uploads/product models.png",
-    href: "/collection",
+    href: "/product-models",
   },
   {
     title: "Images",
