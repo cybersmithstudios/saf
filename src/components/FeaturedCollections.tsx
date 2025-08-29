@@ -33,11 +33,11 @@ const FeaturedCollections = () => {
       </motion.div>
 
       {/* Weather Resistant Feature */}
-            <motion.div
+      <motion.div
         initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
+        viewport={{ once: true }}
         className="relative group overflow-hidden"
       >
         <div className="absolute inset-0 bg-gradient-to-b from-accent/20 to-transparent z-10" />
@@ -50,11 +50,11 @@ const FeaturedCollections = () => {
         <div className="relative z-20 h-full flex flex-col justify-end p-8 text-white opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
           <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mb-6">
             <span className="text-3xl">☀️</span>
-              </div>
+          </div>
           <h3 className="text-3xl md:text-4xl font-light mb-4">Weather Resistant</h3>
           <p className="text-white/90 text-lg leading-relaxed max-w-xs">Built for Nigerian climate conditions with premium materials.</p>
-              </div>
-            </motion.div>
+        </div>
+      </motion.div>
 
       {/* Modular Design Feature */}
       <motion.div
