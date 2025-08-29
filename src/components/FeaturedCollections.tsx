@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 
 // Import images for the features
-const selfImage = "/lovable-uploads/self-assembly-feature.jpg";
-const resistantImage = "/lovable-uploads/weather-resistant-feature.jpg";
-const modularImage = "/lovable-uploads/modular-design-feature.jpg";
+const selfImage = "/self.jpg";
+const resistantImage = "/resistant.jpg";
+const modularImage = "/modular.jpg";
 
 const FeaturedCollections = () => {
   return (
