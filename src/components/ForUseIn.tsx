@@ -1,14 +1,54 @@
 import { Link } from "react-router-dom";
 
 const items = [
-  { name: "Outdoors", slug: "outdoors" },
-  { name: "Indoors", slug: "indoors" },
-  { name: "Restaurants", slug: "restaurants" },
-  { name: "Hotels", slug: "hotels" },
-  { name: "Commercial", slug: "commercial" },
-  { name: "Residential", slug: "residential" },
-  { name: "Lounges", slug: "lounges" },
-  { name: "Export", slug: "export" },
+  { 
+    name: "Outdoors", 
+    slug: "outdoors",
+    image: "/Outdoors/IMG_2677.JPG",
+    description: "Outdoor furniture solutions"
+  },
+  { 
+    name: "Indoors", 
+    slug: "indoors",
+    image: "/Indoors/IMG_0243.jpg",
+    description: "Indoor furniture collections"
+  },
+  { 
+    name: "Restaurants", 
+    slug: "restaurants",
+    image: "/Restaurants/IMG_2491.JPG",
+    description: "Restaurant and cafe furniture"
+  },
+  { 
+    name: "Hotels", 
+    slug: "hotels",
+    image: "/Hotels/IMG_20190914_172506.jpg",
+    description: "Hotel and hospitality furniture"
+  },
+  { 
+    name: "Commercial", 
+    slug: "commercial",
+    image: "/Commercial/IMG_3111.JPG",
+    description: "Commercial space solutions"
+  },
+  { 
+    name: "Residential", 
+    slug: "residential",
+    image: "/Residential/IMG_2142.JPG",
+    description: "Residential furniture"
+  },
+  { 
+    name: "Lounges", 
+    slug: "lounges",
+    image: "/Lounges/IMG_3000.JPG",
+    description: "Lounge and bar furniture"
+  },
+  { 
+    name: "Events", 
+    slug: "events",
+    image: "/Events/IMG_20230131_165112.jpg",
+    description: "Event and function furniture"
+  },
 ];
 
 const ForUseIn = () => {
@@ -39,8 +79,8 @@ const ForUseIn = () => {
           >
             <div className="absolute inset-0">
               <img
-                src="/placeholder.svg"
-                alt={item.name}
+                src={item.image}
+                alt={item.description}
                 className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.05]"
                 loading="lazy"
                 decoding="async"

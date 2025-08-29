@@ -1,67 +1,72 @@
 import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useEffect } from "react";
-import Intercom from "@intercom/messenger-js-sdk";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import TopBanner from "./components/TopBanner";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import Collection from "./pages/Collection";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Catalogue from "./pages/Catalogue";
-import SafAdvantage from "./pages/SafAdvantage";
+import Collection from "./pages/Collection";
 import Distributors from "./pages/Distributors";
 import ECatalogue from "./pages/ECatalogue";
-import CategoryTemplate from "./pages/CategoryTemplate";
 import Offers from "./pages/Offers";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import SafAdvantage from "./pages/SafAdvantage";
 import ProductModelsPage from "./pages/ProductModels";
+import Outdoors from "./pages/collection/Outdoors";
+import Indoors from "./pages/collection/Indoors";
+import Commercial from "./pages/collection/Commercial";
+import Events from "./pages/collection/Events";
+import Hotels from "./pages/collection/Hotels";
+import Lounges from "./pages/collection/Lounges";
+import Residential from "./pages/collection/Residential";
+import Restaurants from "./pages/collection/Restaurants";
+import ScrollToTop from "./components/ScrollToTop";
+import { useScrollToTop } from "./hooks/useScrollToTop";
 
-const queryClient = new QueryClient();
-
-const App = () => {
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      Intercom({
-        app_id: "dpxpg2ro",
-      });
-    }
-  }, []);
+const AppContent = () => {
+  useScrollToTop();
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <div className="flex flex-col min-h-screen">
-            <TopBanner />
-            <Navigation />
-            <main className="flex-grow">
-              <Routes>
-                <Route path="/" element={<Index />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/collection" element={<Collection />} />
-                <Route path="/collection/:slug" element={<CategoryTemplate />} />
-                <Route path="/saf-advantage" element={<SafAdvantage />} />
-                <Route path="/distributors" element={<Distributors />} />
-                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-                <Route path="/catalogue" element={<Catalogue />} />
-                <Route path="/e-catalogue" element={<ECatalogue />} />
-                <Route path="/offers" element={<Offers />} />
-                <Route path="/product-models" element={<ProductModelsPage />} />
-              </Routes>
-            </main>
-            <Footer />
-          </div>
-        </BrowserRouter>
-      </TooltipProvider>
-    </QueryClientProvider>
+    <div className="App">
+      <TopBanner />
+      <Navigation />
+      <main className="flex-grow">
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/catalogue" element={<Catalogue />} />
+          <Route path="/collection" element={<Collection />} />
+          <Route path="/distributors" element={<Distributors />} />
+          <Route path="/e-catalogue" element={<ECatalogue />} />
+          <Route path="/offers" element={<Offers />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/saf-advantage" element={<SafAdvantage />} />
+          <Route path="/product-models" element={<ProductModelsPage />} />
+          <Route path="/collection/outdoors" element={<Outdoors />} />
+          <Route path="/collection/indoors" element={<Indoors />} />
+          <Route path="/collection/commercial" element={<Commercial />} />
+          <Route path="/collection/events" element={<Events />} />
+          <Route path="/collection/hotels" element={<Hotels />} />
+          <Route path="/collection/lounges" element={<Lounges />} />
+          <Route path="/collection/residential" element={<Residential />} />
+          <Route path="/collection/restaurants" element={<Restaurants />} />
+        </Routes>
+      </main>
+      <Footer />
+      <ScrollToTop />
+      <Toaster />
+    </div>
+  );
+};
+
+const App = () => {
+  return (
+    <Router>
+      <AppContent />
+    </Router>
   );
 };
 

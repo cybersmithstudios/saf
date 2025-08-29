@@ -11,21 +11,21 @@ const resources: Resource[] = [
   {
     title: "Product models",
     description:
-      "Download models for your space-planning apps, including Revit and AutoCAD.",
+      "View furniture models and assembly details",
     image: "/lovable-uploads/product models.png",
     href: "/product-models",
   },
   {
     title: "Images",
     description:
-      "Explore our image library and download the ones you need to use.",
+      "Explore furniture in different settings",
     image: "/lovable-uploads/image-small-1693319172-7411.jpg",
     href: "/collection",
   },
   {
     title: "Materials",
     description:
-      "Browse textiles, finishes, laminates, woods and veneers.",
+      "See the leather, fabric, fiber, and ropes used",
     image: "/lovable-uploads/materials.png",
     href: "/collection",
   },
@@ -37,7 +37,7 @@ const DesignerResources = () => {
       <div className="container px-4">
         <div className="text-center mb-6 md:mb-12">
           <h2 className="text-2xl md:text-4xl font-extrabold">
-            Architect and Designer Tools and Resources
+            Tools and Resources
           </h2>
           <p className="text-sm md:text-base mt-2 md:mt-3">
             Transform your ideas into reality.

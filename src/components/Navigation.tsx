@@ -80,7 +80,7 @@ const NavLinks = ({
     { name: "How to Assemble", path: "/saf-advantage#assemble" },
     { name: "Benefits / Features of SAF", path: "/saf-advantage#benefits" },
     { name: "Highlights", path: "/saf-advantage#highlights" },
-    { name: "About Us", path: "/saf-advantage#about" },
+    { name: "About Us", path: "/about" },
   ];
 
   const collectionItems = [

@@ -2,7 +2,7 @@ import { Download, ExternalLink } from "lucide-react";
 
 const ECatalogue = () => {
   return (
-    <div className="pt-24 container mx-auto px-4">
+    <div className="pt-24 pb-16 container mx-auto px-4">
       <div className="max-w-5xl mx-auto">
         <header className="mb-6 md:mb-8 text-center">
           <h1 className="text-3xl md:text-5xl font-bold text-black">E‑Catalogue</h1>
@@ -47,7 +47,7 @@ const ECatalogue = () => {
                 className="w-full h-full"
               />
               <div className="p-6 text-center text-sm text-black/70">
-                Your browser doesn’t support inline PDFs. Please
+                Your browser doesn't support inline PDFs. Please
                 <a href="/catalogue.pdf" target="_blank" rel="noopener noreferrer" className="text-black underline ml-1">open it in a new tab</a>
                 or
                 <a href="/catalogue.pdf" download className="text-black underline ml-1">download it</a>.

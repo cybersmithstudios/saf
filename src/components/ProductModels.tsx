@@ -3,6 +3,7 @@ import { useMemo } from "react";
 type Step = {
   src: string;
   caption: string;
+  fallbackSrc?: string;
 };
 
 type SetupGroup = {
@@ -21,9 +22,9 @@ const buildTwoSeaterSteps = (): Step[] => {
 };
 
 const buildLuganoTableSteps = (): Step[] => {
-  // The files are named "1 (1).jpg" to "4 (1).jpg"
+  // Folder: /Lugano Table Setup, files: 1.jpg - 4.jpg
   return [1, 2, 3, 4].map((n) => ({
-    src: `/lugano-table/${n} (1).jpg`,
+    src: `/Lugano Table Setup/${n}.jpg`,
     caption: `Step ${n}`,
   }));
 };
@@ -33,6 +34,7 @@ const buildLuganoSingleSteps = (): Step[] => {
     const stepNumber = idx + 1;
     return {
       src: `/Lugano Single Setup/${stepNumber}.png`,
+      fallbackSrc: `/Lugano Single Setup/${stepNumber}.jpg`,
       caption: `Step ${stepNumber}`,
     } as Step;
   });
@@ -42,7 +44,8 @@ const buildSantoriniArmchairSteps = (): Step[] => {
   return Array.from({ length: 8 }).map((_, idx) => {
     const stepNumber = idx + 1;
     return {
-      src: `/Santorini Armchair Setup/${stepNumber}.png`,
+      src: `/Santorini Armchair Setup/${stepNumber}.jpg`,
+      fallbackSrc: `/Santorini Armchair Setup/${stepNumber}.png`,
       caption: `Step ${stepNumber}`,
     } as Step;
   });
@@ -99,6 +102,12 @@ const ProductModels = () => {
                         alt={`${group.title} - ${step.caption}`}
                         loading="lazy"
                         className="w-full h-full object-cover"
+                        onError={(e) => {
+                          const img = e.currentTarget as HTMLImageElement;
+                          if (step.fallbackSrc && img.src !== window.location.origin + step.fallbackSrc) {
+                            img.src = step.fallbackSrc;
+                          }
+                        }}
                       />
                     </div>
                     <figcaption className="p-3 text-sm font-medium">

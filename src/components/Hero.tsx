@@ -51,7 +51,7 @@ const Hero = () => {
         </motion.div>
       ))}
 
-      <div className="container relative z-10 px-4 py-32 text-center text-white">
+      <div className="container relative z-10 px-4 pt-40 pb-32 text-center text-white">
         <motion.span
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

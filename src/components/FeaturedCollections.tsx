@@ -1,85 +1,84 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 
-const collections = [
-  {
-    title: "Lugano Sofas",
-    description: "Modern comfort meets timeless design",
-    image: "/lovable-uploads/5seater-1.jpg",
-    link: "/collection?category=lugano",
-  },
-  {
-    title: "Malibu Chairs",
-    description: "Modern seating solutions",
-    image: "/lovable-uploads/malibu-1.jpeg",
-    link: "/collection?category=armchairs",
-  },
-  {
-    title: "Santorini Chairs",
-    description: "Elegant seating solutions",
-    image: "/lovable-uploads/eb87953d-ca38-4475-a9c4-7a4fa90acecb.png",
-    link: "/collection?category=armchairs",
-  },
-];
+// Import images for the features
+const selfImage = "/lovable-uploads/self-assembly-feature.jpg";
+const resistantImage = "/lovable-uploads/weather-resistant-feature.jpg";
+const modularImage = "/lovable-uploads/modular-design-feature.jpg";
 
 const FeaturedCollections = () => {
   return (
-    <section className="py-14 md:py-24 bg-gray-50">
-      <div className="container px-4">
-        <div className="text-center mb-8 md:mb-16">
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="inline-block px-3 md:px-4 py-1.5 mb-3 md:mb-4 text-xs md:text-sm font-medium bg-primary/5 text-primary rounded-full"
-          >
-            Featured Collections
-          </motion.span>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-2xl md:text-4xl font-bold mb-3 md:mb-4"
-          >
-            Discover Our Latest Designs
-          </motion.h2>
+    <section className="min-h-screen grid grid-cols-1 md:grid-cols-3">
+      {/* Self Assembly Feature */}
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="relative group overflow-hidden"
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-secondary/20 to-transparent z-10" />
+        <div className="absolute inset-x-0 bottom-0 h-1/4 z-10 pointer-events-none bg-gradient-to-t from-black/35 via-black/15 to-transparent backdrop-blur-[2px] sm:backdrop-blur opacity-0 group-hover:opacity-100 transition-opacity" />
+        <img 
+          src={selfImage} 
+          alt="Self Assembly - Easy setup with comprehensive guides"
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+        <div className="relative z-20 h-full flex flex-col justify-end p-8 text-white opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+          <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mb-6">
+            <span className="text-3xl">🔧</span>
+          </div>
+          <h3 className="text-3xl md:text-4xl font-light mb-4">Self Assembly</h3>
+          <p className="text-white/90 text-lg leading-relaxed max-w-xs">Easy setup with comprehensive guides for hassle-free installation.</p>
         </div>
+      </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
-          {collections.map((collection, index) => (
-            <motion.div
-              key={collection.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="group relative overflow-hidden rounded-2xl"
-            >
-              <div className="aspect-[4/5] overflow-hidden">
-                <img
-                  src={collection.image || "/placeholder.svg"}
-                  alt={collection.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-4 md:p-6 text-white">
-                <h3 className="text-lg md:text-xl font-bold mb-1 md:mb-2">{collection.title}</h3>
-                <p className="text-xs md:text-sm text-gray-200 mb-3 md:mb-4">
-                  {collection.description}
-                </p>
-                <Link
-                  to={collection.link}
-                  className="inline-block w-fit px-3 md:px-4 py-1.5 md:py-2 bg-white/10 hover:bg-white/20 rounded-full backdrop-blur-sm transition-all duration-300 text-sm"
-                >
-                  View Collection
-                </Link>
-              </div>
-            </motion.div>
-          ))}
+      {/* Weather Resistant Feature */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        viewport={{ once: true }}
+        className="relative group overflow-hidden"
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-accent/20 to-transparent z-10" />
+        <div className="absolute inset-x-0 bottom-0 h-1/4 z-10 pointer-events-none bg-gradient-to-t from-black/35 via-black/15 to-transparent backdrop-blur-[2px] sm:backdrop-blur opacity-0 group-hover:opacity-100 transition-opacity" />
+        <img 
+          src={resistantImage} 
+          alt="Weather Resistant - Built for Nigerian climate conditions"
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+        <div className="relative z-20 h-full flex flex-col justify-end p-8 text-white opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+          <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mb-6">
+            <span className="text-3xl">☀️</span>
+          </div>
+          <h3 className="text-3xl md:text-4xl font-light mb-4">Weather Resistant</h3>
+          <p className="text-white/90 text-lg leading-relaxed max-w-xs">Built for Nigerian climate conditions with premium materials.</p>
         </div>
-      </div>
+      </motion.div>
+
+      {/* Modular Design Feature */}
+      <motion.div
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        viewport={{ once: true }}
+        className="relative group overflow-hidden"
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/20 to-transparent z-10" />
+        <div className="absolute inset-x-0 bottom-0 h-1/4 z-10 pointer-events-none bg-gradient-to-t from-black/35 via-black/15 to-transparent backdrop-blur-[2px] sm:backdrop-blur opacity-0 group-hover:opacity-100 transition-opacity" />
+        <img 
+          src={modularImage} 
+          alt="Modular Design - 1 to 10+ seater configurations"
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+        <div className="relative z-20 h-full flex flex-col justify-end p-8 text-white opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+          <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mb-6">
+            <span className="text-3xl">✨</span>
+          </div>
+          <h3 className="text-3xl md:text-4xl font-light mb-4">Modular Design</h3>
+          <p className="text-white/90 text-lg leading-relaxed max-w-xs">1 to 10+ seater configurations for any space requirement.</p>
+        </div>
+      </motion.div>
     </section>
   );
 };
