@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Plus, Eye } from "lucide-react";
+import { Expand, Eye } from "lucide-react";
 import { useState } from "react";
 import ProductModal from "./ProductModal";
 import { products } from "@/data/products";
@@ -57,11 +57,13 @@ const ProductGrid = ({ category }: ProductGridProps) => {
                   setSelectedProduct(product.id);
                 }}
                 className="rounded-full"
+                aria-label="Expand details"
+                title="Expand details"
               >
-                <Plus className="w-4 h-4" />
+                <Expand className="w-4 h-4" />
               </Button>
             </div>
-          </motion.div>
+          </motion.div)
         ))}
       </div>
 
