@@ -30,18 +30,18 @@ const AppContent = () => {
 
   return (
     <div className="App">
-      <TopBanner />
-      <Navigation />
-      <main className="flex-grow">
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
+            <TopBanner />
+            <Navigation />
+            <main className="flex-grow">
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
           <Route path="/catalogue" element={<Catalogue />} />
-          <Route path="/collection" element={<Collection />} />
-          <Route path="/distributors" element={<Distributors />} />
-          <Route path="/e-catalogue" element={<ECatalogue />} />
-          <Route path="/offers" element={<Offers />} />
+                <Route path="/collection" element={<Collection />} />
+                <Route path="/distributors" element={<Distributors />} />
+                <Route path="/e-catalogue" element={<ECatalogue />} />
+                <Route path="/offers" element={<Offers />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/saf-advantage" element={<SafAdvantage />} />
           <Route path="/product-models" element={<ProductModelsPage />} />
@@ -53,12 +53,12 @@ const AppContent = () => {
           <Route path="/collection/lounges" element={<Lounges />} />
           <Route path="/collection/residential" element={<Residential />} />
           <Route path="/collection/restaurants" element={<Restaurants />} />
-        </Routes>
-      </main>
-      <Footer />
+              </Routes>
+            </main>
+            <Footer />
       <ScrollToTop />
       <Toaster />
-    </div>
+          </div>
   );
 };
 
