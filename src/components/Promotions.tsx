@@ -35,7 +35,7 @@ const Promotions = () => {
             Order Now and Enjoy
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Take advantage of our exclusive offers and special deals designed to enhance your shopping experience
+            Take advantage of our exclusive offers and special deals
           </p>
         </motion.div>
 

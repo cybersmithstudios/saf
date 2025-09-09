@@ -23,6 +23,7 @@ import Restaurants from "./pages/collection/Restaurants";
 import ScrollToTop from "./components/ScrollToTop";
 import { useScrollToTop } from "./hooks/useScrollToTop";
 import IntercomWidget from "./components/IntercomWidget";
+import FloatingWhatsApp from "./components/FloatingWhatsApp";
 
 const AppContent = () => {
   useScrollToTop();
@@ -57,6 +58,7 @@ const AppContent = () => {
       <ScrollToTop />
       <Toaster />
       <IntercomWidget />
+      <FloatingWhatsApp />
           </div>
   );
 };

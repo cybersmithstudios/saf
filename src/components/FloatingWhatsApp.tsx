@@ -1,27 +1,26 @@
 import { MessageCircle } from "lucide-react";
 import { useEffect } from "react";
 
-const FloatingIntercom = () => {
-  useEffect(() => {
-    // Initialize Intercom
-    (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/YOUR_APP_ID';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(document.readyState==='complete'){l();}else if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();
-  }, []);
-
-  const openIntercom = () => {
-    if (window.Intercom) {
-      window.Intercom('show');
-    }
-  };
-
+const FloatingWhatsApp = () => {
   return (
-    <button
-      onClick={openIntercom}
-      className="fixed bottom-6 right-6 z-50 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 cursor-pointer"
-      aria-label="Open Intercom chat"
+    <a
+      href="https://wa.link/4jdvaq"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Chat on WhatsApp"
+      className="fixed bottom-6 right-6 z-50 p-3 rounded-full shadow-lg bg-black text-white hover:opacity-90 transition"
     >
-      <MessageCircle className="w-6 h-6" />
-    </button>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        className="w-6 h-6 fill-current"
+        role="img"
+        aria-hidden="true"
+      >
+        <path d="M20.52 3.48A11.94 11.94 0 0012.06 0C5.46 0 .12 5.34.12 11.94c0 2.1.54 4.14 1.56 5.94L0 24l6.3-1.62c1.74.96 3.72 1.46 5.76 1.46h.06c6.6 0 11.94-5.34 11.94-11.94a11.9 11.9 0 00-3.54-8.46zM12.12 21.6h-.06a9.6 9.6 0 01-4.86-1.32l-.36-.18-3.72.96.99-3.63-.24-.36a9.57 9.57 0 01-1.53-5.13c0-5.28 4.29-9.57 9.57-9.57 2.55 0 4.95.99 6.75 2.79a9.53 9.53 0 012.82 6.78c0 5.28-4.29 9.57-9.57 9.57zm5.49-7.14c-.3-.15-1.77-.87-2.04-.96-.27-.09-.45-.15-.63.15-.18.3-.72.96-.9 1.14-.18.18-.33.21-.6.06-.3-.15-1.26-.45-2.4-1.47-.9-.81-1.5-1.8-1.68-2.1-.18-.3-.02-.45.13-.6.12-.12.3-.33.45-.51.15-.18.2-.3.3-.51.1-.21.05-.39-.02-.54-.06-.15-.63-1.53-.87-2.1-.24-.57-.48-.48-.66-.48h-.57c-.18 0-.48.06-.72.33-.24.27-.93.9-.93 2.19s.96 2.55 1.08 2.73c.12.18 1.89 2.88 4.59 4.05.64.27 1.14.42 1.53.54.64.2 1.23.17 1.69.1.51-.08 1.77-.72 2.01-1.41.24-.69.24-1.28.17-1.41-.06-.12-.24-.18-.54-.33z"/>
+      </svg>
+    </a>
   );
 };
 
-export default FloatingIntercom;
+export default FloatingWhatsApp;

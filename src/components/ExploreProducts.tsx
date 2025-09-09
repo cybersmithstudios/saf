@@ -7,26 +7,10 @@ type Tile = {
 };
 
 const tiles: Tile[] = [
-  {
-    title: "Sofas",
-    image: "/lovable-uploads/sofas.png",
-    href: "/collection?category=lugano",
-  },
-  {
-    title: "Armchairs",
-    image: "/lovable-uploads/armchairs.png",
-    href: "/collection?category=armchairs",
-  },
-  {
-    title: "Loungers",
-    image: "/lovable-uploads/loungers1.png",
-    href: "/collection?category=loungers",
-  },
-  {
-    title: "Rattan",
-    image: "/lovable-uploads/rattan1.png",
-    href: "/collection?category=weaved-rattan",
-  },
+  { title: "Sofas", image: "/lovable-uploads/sofas.png", href: "#" },
+  { title: "Armchairs", image: "/lovable-uploads/armchairs.png", href: "#" },
+  { title: "Loungers", image: "/lovable-uploads/loungers1.png", href: "#" },
+  { title: "Rattan", image: "/lovable-uploads/rattan1.png", href: "#" },
 ];
 
 const ExploreProducts = () => {
@@ -42,10 +26,9 @@ const ExploreProducts = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {tiles.map((tile) => (
-            <Link
+            <div
               key={tile.title}
-              to={tile.href}
-              className="group relative block overflow-hidden rounded-xl bg-white"
+              className="group relative block overflow-hidden rounded-xl bg-white select-none pointer-events-none"
             >
               <div className="aspect-[4/5] md:aspect-[3/4]">
                 <img
@@ -60,7 +43,7 @@ const ExploreProducts = () => {
                   {tile.title}
                 </span>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       </div>
