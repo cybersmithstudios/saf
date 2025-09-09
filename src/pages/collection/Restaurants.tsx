@@ -2,19 +2,19 @@ import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 
 const restaurantsImages = [
-  { src: "/Restaurants/IMG_2491.JPG", alt: "Restaurant furniture setup 1" },
-  { src: "/Restaurants/IMG_2467.JPG", alt: "Restaurant furniture setup 2" },
-  { src: "/Restaurants/IMG_2450.JPG", alt: "Restaurant furniture setup 3" },
+  { src: "/Restaurants/IMG_2491.jpg", alt: "Restaurant furniture setup 1" },
+  { src: "/Restaurants/IMG_2467.jpg", alt: "Restaurant furniture setup 2" },
+  { src: "/Restaurants/IMG_2450.jpg", alt: "Restaurant furniture setup 3" },
   { src: "/Restaurants/IMG-20160614-WA0005.jpg", alt: "Restaurant furniture setup 4" },
   { src: "/Restaurants/IMG-20160614-WA0004.jpg", alt: "Restaurant furniture setup 5" },
   { src: "/Restaurants/IMG-20160614-WA0003.jpg", alt: "Restaurant furniture setup 6" },
   { src: "/Restaurants/IMG-20160614-WA0002.jpg", alt: "Restaurant furniture setup 7" },
   { src: "/Restaurants/IMG-20160614-WA0001.jpg", alt: "Restaurant furniture setup 8" },
-  { src: "/Restaurants/DSCN4737.JPG", alt: "Restaurant furniture setup 9" },
-  { src: "/Restaurants/DSCN4420.JPG", alt: "Restaurant furniture setup 10" },
-  { src: "/Restaurants/DSCN4416.JPG", alt: "Restaurant furniture setup 11" },
-  { src: "/Restaurants/DSCN3581.JPG", alt: "Restaurant furniture setup 12" },
-  { src: "/Restaurants/DJI_0010.JPG", alt: "Restaurant furniture setup 13" },
+  { src: "/Restaurants/DSCN4737.jpg", alt: "Restaurant furniture setup 9" },
+  { src: "/Restaurants/DSCN4420.jpg", alt: "Restaurant furniture setup 10" },
+  { src: "/Restaurants/DSCN4416.jpg", alt: "Restaurant furniture setup 11" },
+  { src: "/Restaurants/DSCN3581.jpg", alt: "Restaurant furniture setup 12" },
+  { src: "/Restaurants/DJI_0010.jpg", alt: "Restaurant furniture setup 13" },
   { src: "/Restaurants/277703726_665898697965178_4367417183106033097_n.jpg", alt: "Restaurant furniture setup 14" },
   { src: "/Restaurants/277701310_984410018872487_6686256742647854726_n.jpg", alt: "Restaurant furniture setup 15" },
 ];

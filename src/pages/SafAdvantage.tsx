@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { CheckCircle2 } from "lucide-react";
 import ProductAdvantage from "@/components/ProductAdvantage";
 
 const Section = ({ id, title, children }: { id: string; title: string; children: React.ReactNode }) => (
@@ -37,7 +38,7 @@ const AssemblyCard = ({ title, description, image, link }: {
 
 const SafAdvantage = () => {
   const luganoProduct = {
-    title: "BENEFITS/FEATURES OF LUGANO",
+    title: "",
     benefits: [
       "Easy to transport",
       "Modular, can be assembled and disassembled",
@@ -53,7 +54,7 @@ const SafAdvantage = () => {
   };
 
   const malibuProduct = {
-    title: "BENEFITS/FEATURES OF MALIBU",
+    title: "",
     benefits: [
       "Easy to transport",
       "Available in multiple colors",
@@ -67,7 +68,7 @@ const SafAdvantage = () => {
   };
 
   const santoriniProduct = {
-    title: "BENEFITS/FEATURES OF SANTORINI",
+    title: "",
     benefits: [
       "Easy to transport",
       "Modular, can be assembled and disassembled",
@@ -81,7 +82,7 @@ const SafAdvantage = () => {
   };
 
   const soloLoungerProduct = {
-    title: "BENEFITS/FEATURES OF SOLO LOUNGER",
+    title: "",
     benefits: [
       "Easy to transport",
       "Available in multiple colors",
@@ -95,6 +96,12 @@ const SafAdvantage = () => {
 
   const assemblyConfigurations = [
     {
+      title: "Lugano Single Setup",
+      description: "Assembly guide for single Lugano armchair",
+      image: "/Lugano Single Setup/1.png",
+      link: "/product-models#lugano-single"
+    },
+    {
       title: "2-Seater Lugano Setup",
       description: "Step-by-step assembly guide for 2-seater Lugano configuration",
       image: "/2seater-scematics/1.jpg",
@@ -107,17 +114,22 @@ const SafAdvantage = () => {
       link: "/product-models#lugano-table"
     },
     {
-      title: "Lugano Single Setup",
-      description: "Assembly guide for single Lugano armchair",
-      image: "/Lugano Single Setup/1.png",
-      link: "/product-models#lugano-single"
-    },
-    {
       title: "Santorini Armchair Setup",
       description: "Setup instructions for Santorini armchair and table",
       image: "/Santorini Armchair Setup/1.jpg",
       link: "/product-models#santorini-armchair"
     }
+  ];
+
+  const generalBenefits: string[] = [
+    "Easy to transport",
+    "Modular design for quick assembly and disassembly",
+    "Available in a wide range of colors",
+    "Customizable with different cushion colors",
+    "Proudly made in Nigeria",
+    "Durable in all weather, fit for both indoor and outdoor use",
+    "Stackable for easy storage",
+    "Flexible seating options, extendable into larger sets",
   ];
 
   return (
@@ -160,6 +172,22 @@ const SafAdvantage = () => {
           <Link to="/contact" className="inline-block bg-black text-white px-6 py-3 rounded-md">Contact Us</Link>
         </div>
       </Section>
+
+      {/* General Benefits */}
+      <section id="benefits" className="container mx-auto px-4 pb-20">
+        <div className="rounded-2xl border border-gray-200 bg-white/60 backdrop-blur p-6 md:p-10">
+          <h2 className="text-2xl md:text-3xl font-semibold text-black text-center">Why Choose SAF</h2>
+          <p className="text-center text-gray-600 mt-2 md:mt-3">General product benefits across our collections</p>
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+            {generalBenefits.map((benefit) => (
+              <div key={benefit} className="flex items-start gap-3 rounded-xl border border-gray-200 bg-white p-4 md:p-5 shadow-sm">
+                <CheckCircle2 className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
+                <span className="text-black/80 leading-relaxed">{benefit}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

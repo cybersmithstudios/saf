@@ -17,14 +17,14 @@ const residentialImages = [
   { src: "/Residential/_OP10830.jpg", alt: "Residential furniture setup 13" },
   { src: "/Residential/_OP10821.jpg", alt: "Residential furniture setup 14" },
   { src: "/Residential/_OP10816.jpg", alt: "Residential furniture setup 15" },
-  { src: "/Residential/IMG_2311.JPG", alt: "Residential furniture setup 16" },
-  { src: "/Residential/IMG_2264.JPG", alt: "Residential furniture setup 17" },
-  { src: "/Residential/IMG_2264 (1).JPG", alt: "Residential furniture setup 18" },
-  { src: "/Residential/IMG_2142.JPG", alt: "Residential furniture setup 19" },
-  { src: "/Residential/IMG_2142 (4).JPG", alt: "Residential furniture setup 20" },
-  { src: "/Residential/IMG_2142 (3).JPG", alt: "Residential furniture setup 21" },
-  { src: "/Residential/IMG_2142 (2).JPG", alt: "Residential furniture setup 22" },
-  { src: "/Residential/IMG_2142 (1).JPG", alt: "Residential furniture setup 23" },
+  { src: "/Residential/IMG_2311.jpg", alt: "Residential furniture setup 16" },
+  { src: "/Residential/IMG_2264.jpg", alt: "Residential furniture setup 17" },
+  { src: "/Residential/IMG_2264 (1).jpg", alt: "Residential furniture setup 18" },
+  { src: "/Residential/IMG_2142.jpg", alt: "Residential furniture setup 19" },
+  { src: "/Residential/IMG_2142 (4).jpg", alt: "Residential furniture setup 20" },
+  { src: "/Residential/IMG_2142 (3).jpg", alt: "Residential furniture setup 21" },
+  { src: "/Residential/IMG_2142 (2).jpg", alt: "Residential furniture setup 22" },
+  { src: "/Residential/IMG_2142 (1).jpg", alt: "Residential furniture setup 23" },
 ];
 
 const Residential = () => {

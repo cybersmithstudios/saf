@@ -18,7 +18,7 @@ const TopCustomers: React.FC = () => {
   return (
     <section className="py-8 md:py-12">
       <div className="container px-4">
-        <h2 className="text-center text-xs md:text-sm uppercase tracking-widest text-muted-foreground mb-4 md:mb-6">Our SAF Brand Collection</h2>
+        <h2 className="text-center text-xs md:text-sm uppercase tracking-widest text-muted-foreground mb-4 md:mb-6">Our Brand Partners</h2>
         <div className="relative overflow-hidden">
           <div className="flex gap-10 md:gap-16 animate-marquee will-change-transform" aria-hidden="true">
             {duplicatedLogos.map((src, idx) => (

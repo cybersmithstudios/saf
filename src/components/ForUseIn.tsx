@@ -89,11 +89,6 @@ const ForUseIn = () => {
             </div>
 
             <div className="relative z-10 h-full flex flex-col justify-end p-4">
-              <div className="flex items-center gap-2">
-                <span className="inline-flex items-center rounded-full bg-white/90 px-2 py-0.5 text-[10px] font-medium text-gray-900 ring-1 ring-black/5">
-                  Collection
-                </span>
-              </div>
               <h3 className="mt-2 text-white text-lg md:text-xl font-semibold drop-shadow-sm">{item.name}</h3>
               <span className="mt-1 inline-flex w-max items-center text-xs text-white/80 opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all">
                 View {item.name}

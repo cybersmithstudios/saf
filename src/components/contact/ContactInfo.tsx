@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Building2, Factory, Building } from "lucide-react";
+import { Mail, Phone, MapPin, Building2, Factory, Building, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
 
 
@@ -13,24 +13,15 @@ const locations = [
     address: "Km 12 Old Lagos Road, Aiyetoro, Ibadan.",
     icon: Factory,
   },
-  {
-    title: "Liaison Office",
-    address: "11A Idejo Street, Off Adeola Odeku, Victoria Island, Lagos.",
-    icon: Building,
-  },
 ];
 
 const phoneNumbers = [
   "07 007 007 007",
   "+234 (0) 908 777 5777",
-  "+234 (0) 809 800 9800",
-  "+234 (0) 908 777 2 777",
-  "+234 (0) 908 777 1 777",
 ];
 
 const emails = [
   "info@saf-furniture.com",
-  "order@saf-furniture.com",
 ];
 
 const ContactInfo = () => {
@@ -92,9 +83,15 @@ const ContactInfo = () => {
             {/* Replace with actual QR code */}
             <img src='/qr.png' alt="qrcode" />
           </div>
-          <p className="text-sm text-gray-600">
-            Scan to connect with our sales team instantly
-          </p>
+          <a
+            href="https://wa.link/4jdvaq"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm text-accent hover:underline"
+          >
+            Click here to chat
+            <ExternalLink className="w-4 h-4" />
+          </a>
         </div>
       </div>
     </div>

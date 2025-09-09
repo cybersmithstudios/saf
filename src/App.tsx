@@ -2,11 +2,9 @@ import { Toaster } from "@/components/ui/toaster";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
-import TopBanner from "./components/TopBanner";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import Catalogue from "./pages/Catalogue";
 import Collection from "./pages/Collection";
 import Distributors from "./pages/Distributors";
 import ECatalogue from "./pages/ECatalogue";
@@ -24,20 +22,20 @@ import Residential from "./pages/collection/Residential";
 import Restaurants from "./pages/collection/Restaurants";
 import ScrollToTop from "./components/ScrollToTop";
 import { useScrollToTop } from "./hooks/useScrollToTop";
+import IntercomWidget from "./components/IntercomWidget";
 
 const AppContent = () => {
   useScrollToTop();
 
   return (
     <div className="App">
-            <TopBanner />
             <Navigation />
             <main className="flex-grow">
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />
-          <Route path="/catalogue" element={<Catalogue />} />
+          
                 <Route path="/collection" element={<Collection />} />
                 <Route path="/distributors" element={<Distributors />} />
                 <Route path="/e-catalogue" element={<ECatalogue />} />
@@ -58,6 +56,7 @@ const AppContent = () => {
             <Footer />
       <ScrollToTop />
       <Toaster />
+      <IntercomWidget />
           </div>
   );
 };

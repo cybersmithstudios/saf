@@ -5,6 +5,53 @@ import ProductGrid from "@/components/collection/ProductGrid";
 import { ChevronRight } from "lucide-react";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
+type Img = { src: string; alt: string };
+const collectionGalleries: Record<string, Img[]> = {
+  outdoors: [
+    { src: "/Outdoors/IMG_2491.jpg", alt: "Outdoors 1" },
+    { src: "/Outdoors/IMG_2467.jpg", alt: "Outdoors 2" },
+    { src: "/Outdoors/IMG_2450.jpg", alt: "Outdoors 3" },
+    { src: "/Outdoors/DSCN4737.jpg", alt: "Outdoors 4" },
+  ],
+  indoors: [
+    { src: "/Indoors/_OP10873.jpg", alt: "Indoors 1" },
+    { src: "/Indoors/_OP10869.jpg", alt: "Indoors 2" },
+    { src: "/Indoors/_OP10865.jpg", alt: "Indoors 3" },
+    { src: "/Indoors/IMG_2311.jpg", alt: "Indoors 4" },
+  ],
+  restaurants: [
+    { src: "/Restaurants/IMG_2491.jpg", alt: "Restaurants 1" },
+    { src: "/Restaurants/IMG_2467.jpg", alt: "Restaurants 2" },
+    { src: "/Restaurants/IMG_2450.jpg", alt: "Restaurants 3" },
+    { src: "/Restaurants/DSCN4737.jpg", alt: "Restaurants 4" },
+  ],
+  hotels: [
+    { src: "/Hotels/IMG_20190914_172506.jpg", alt: "Hotels 1" },
+    { src: "/Hotels/IMG_20190914_172500.jpg", alt: "Hotels 2" },
+    { src: "/Hotels/IMG_20190914_172450.jpg", alt: "Hotels 3" },
+    { src: "/Hotels/20190826_122311.jpg", alt: "Hotels 4" },
+  ],
+  commercial: [
+    { src: "/Commercial/IMG_3111.JPG", alt: "Commercial 1" },
+    { src: "/Commercial/IMG_3051.JPG", alt: "Commercial 2" },
+    { src: "/Commercial/IMG_3043.JPG", alt: "Commercial 3" },
+    { src: "/Commercial/IMG_3014.JPG", alt: "Commercial 4" },
+  ],
+  residential: [
+    { src: "/Residential/_OP10873.jpg", alt: "Residential 1" },
+    { src: "/Residential/_OP10869.jpg", alt: "Residential 2" },
+    { src: "/Residential/_OP10865.jpg", alt: "Residential 3" },
+    { src: "/Residential/IMG_2311.jpg", alt: "Residential 4" },
+  ],
+  lounges: [],
+  events: [
+    { src: "/Events/DSCN4661.JPG", alt: "Events 1" },
+    { src: "/Events/DSCN4613.JPG", alt: "Events 2" },
+    { src: "/Events/DSCN4609.JPG", alt: "Events 3" },
+    { src: "/Events/IMG_20230131_165112.jpg", alt: "Events 4" },
+  ],
+};
+
 const Collection = () => {
   return (
     <div className="min-h-screen pt-20">
@@ -66,21 +113,22 @@ const Collection = () => {
                 <div className="mb-8">
                   <h2 className="text-2xl font-semibold mb-2">{category.name}</h2>
                   <p className="text-muted-foreground mb-4">{category.description}</p>
-                  <ScrollArea className="w-full pb-4">
-                    <div className="flex gap-2 min-w-max">
-                      {category.subcategories.map((subcategory) => (
-                        <button
-                          key={subcategory.id}
-                          className="px-4 py-2 text-sm rounded-full bg-secondary/10 hover:bg-secondary/20 transition-colors whitespace-nowrap"
-                        >
-                          {subcategory.name}
-                        </button>
-                      ))}
-                    </div>
-                    <ScrollBar orientation="horizontal" />
-                  </ScrollArea>
                 </div>
-                <ProductGrid category={category.id} />
+
+                {collectionGalleries[category.id] && collectionGalleries[category.id].length > 0 ? (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
+                    {collectionGalleries[category.id].map((image, idx) => (
+                      <div key={idx} className="group relative overflow-hidden rounded-xl bg-white shadow-sm">
+                        <div className="aspect-[4/3] overflow-hidden">
+                          <img src={image.src} alt={image.alt} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                        </div>
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300" />
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <ProductGrid category={category.id} />
+                )}
               </TabsContent>
             ))}
           </div>

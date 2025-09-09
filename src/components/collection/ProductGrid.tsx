@@ -63,7 +63,7 @@ const ProductGrid = ({ category }: ProductGridProps) => {
                 <Expand className="w-4 h-4" />
               </Button>
             </div>
-          </motion.div)
+          </motion.div>
         ))}
       </div>
 

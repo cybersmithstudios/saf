@@ -16,7 +16,7 @@ const buildTwoSeaterSteps = (): Step[] => {
     const stepNumber = idx + 1;
     return {
       src: `/2seater-scematics/${stepNumber}.jpg`,
-      caption: `Step ${stepNumber}`,
+      caption: ``,
     } as Step;
   });
 };
@@ -35,7 +35,7 @@ const buildLuganoSingleSteps = (): Step[] => {
     return {
       src: `/Lugano Single Setup/${stepNumber}.png`,
       fallbackSrc: `/Lugano Single Setup/${stepNumber}.jpg`,
-      caption: `Step ${stepNumber}`,
+      caption: ``,
     } as Step;
   });
 };
@@ -55,20 +55,20 @@ const ProductModels = () => {
   const groups: SetupGroup[] = useMemo(
     () => [
       {
-        title: "Lugano table setup",
-        steps: buildLuganoTableSteps(),
-      },
-      {
         title: "Lugano Single Setup",
         steps: buildLuganoSingleSteps(),
       },
       {
-        title: "Santorini Armchair Setup",
-        steps: buildSantoriniArmchairSteps(),
-      },
-      {
         title: "2seater Lugano setup",
         steps: buildTwoSeaterSteps(),
+      },
+      {
+        title: "Lugano table setup",
+        steps: buildLuganoTableSteps(),
+      },
+      {
+        title: "Santorini Armchair Setup",
+        steps: buildSantoriniArmchairSteps(),
       },
     ],
     []
@@ -91,15 +91,15 @@ const ProductModels = () => {
                 {group.title}
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                {group.steps.map((step) => (
+                {group.steps.map((step, idx) => (
                   <figure
-                    key={`${group.title}-${step.caption}`}
+                    key={`${group.title}-${idx}`}
                     className="rounded-xl overflow-hidden border bg-white"
                   >
                     <div className="aspect-[4/3] w-full overflow-hidden">
                       <img
                         src={step.src}
-                        alt={`${group.title} - ${step.caption}`}
+                        alt={`${group.title}`}
                         loading="lazy"
                         className="w-full h-full object-cover"
                         onError={(e) => {
@@ -110,9 +110,6 @@ const ProductModels = () => {
                         }}
                       />
                     </div>
-                    <figcaption className="p-3 text-sm font-medium">
-                      {step.caption}
-                    </figcaption>
                   </figure>
                 ))}
               </div>

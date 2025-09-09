@@ -4,6 +4,8 @@ import { Menu, X, ChevronDown } from "lucide-react";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
+  const lastScrollYRef = useRef<number>(0);
   const menuRef = useRef<HTMLDivElement>(null);
   
 
@@ -18,8 +20,21 @@ const Navigation = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  useEffect(() => {
+    const onScroll = () => {
+      const currentY = window.scrollY;
+      const isScrollingDown = currentY > lastScrollYRef.current;
+      const beyondThreshold = currentY > 16;
+      setIsHidden(isScrollingDown && beyondThreshold);
+      lastScrollYRef.current = currentY;
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <nav className="fixed left-0 right-0 z-40 bg-white/80 backdrop-blur-md shadow-sm" style={{ top: 'var(--banner-height, 40px)' }}>
+    <nav className={`fixed left-0 right-0 z-40 bg-white/80 backdrop-blur-md shadow-sm transition-transform duration-300 ${isHidden ? "-translate-y-full" : "translate-y-0"}`} style={{ top: 0 }}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-24 sm:h-16">
             <Link to="/" className="flex items-center">
@@ -78,9 +93,8 @@ const NavLinks = ({
 
   const advantageItems = [
     { name: "How to Assemble", path: "/saf-advantage#assemble" },
-    { name: "Benefits / Features of SAF", path: "/saf-advantage#benefits" },
-    { name: "Highlights", path: "/saf-advantage#highlights" },
-    { name: "About Us", path: "/about" },
+    { name: "General Benefits", path: "/saf-advantage#benefits" },
+    { name: "About Us", path: "/saf-advantage#about" },
   ];
 
   const collectionItems = [
@@ -91,7 +105,7 @@ const NavLinks = ({
     { name: "Commercial", path: "/collection/commercial" },
     { name: "Residential", path: "/collection/residential" },
     { name: "Lounges", path: "/collection/lounges" },
-    { name: "Export", path: "/collection/export" },
+    { name: "Events", path: "/collection/events" },
   ];
 
   if (mobile) {
@@ -145,9 +159,9 @@ const NavLinks = ({
       <Link to="/" className={`${baseClasses} ${desktopClasses}`}>Home</Link>
 
       <div className="relative group">
-        <Link to="/saf-advantage" className={`${baseClasses} ${desktopClasses} flex items-center gap-1`}>
+        <button type="button" className={`${baseClasses} ${desktopClasses} flex items-center gap-1 cursor-default`} aria-haspopup="menu" aria-expanded="false">
           SAF Advantage <ChevronDown className="w-4 h-4" />
-        </Link>
+        </button>
         <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-opacity absolute top-full left-0 bg-white shadow-md rounded-md py-2 min-w-[220px] z-50">
           {advantageItems.map((item) => (
             <Link key={item.name} to={item.path} className="block px-4 py-2 hover:bg-gray-50 text-black" onClick={closeIfMobile}>
@@ -157,18 +171,7 @@ const NavLinks = ({
         </div>
       </div>
 
-      <div className="relative group">
-        <Link to="/collection" className={`${baseClasses} ${desktopClasses} flex items-center gap-1`}>
-          Collection <ChevronDown className="w-4 h-4" />
-        </Link>
-        <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-opacity absolute top-full left-0 bg-white shadow-md rounded-md py-2 min-w-[220px] z-50">
-          {collectionItems.map((item) => (
-            <Link key={item.name} to={item.path} className="block px-4 py-2 hover:bg-gray-50 text-black" onClick={closeIfMobile}>
-              {item.name}
-            </Link>
-          ))}
-        </div>
-      </div>
+      <Link to="/collection" className={`${baseClasses} ${desktopClasses}`}>Collection</Link>
 
       <Link to="/distributors" className={`${baseClasses} ${desktopClasses}`}>Distributors</Link>
       <Link to="/contact" className={`${baseClasses} ${desktopClasses}`}>Contact</Link>
