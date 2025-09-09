@@ -54,6 +54,27 @@ src/
 └── hooks/           # Custom React hooks
 ```
 
+## Cloudinary Video Streaming
+
+Assembly videos are streamed via Cloudinary (HLS with MP4 fallback) on the Product Models page.
+
+1) Create a `.env` file in the project root with:
+
+```env
+VITE_CLOUDINARY_CLOUD_NAME=your_cloud_name
+```
+
+2) Upload your videos to Cloudinary and note their public IDs. Update the mapping in `src/components/ProductModels.tsx`:
+
+```
+const videoPublicIds = {
+  "Lugano Single Setup": "saf/assembly/lugano-single",
+  // ...
+};
+```
+
+3) Ensure HLS/DASH delivery is enabled on your Cloudinary account (or MP4 will be used as a fallback).
+
 ## Contact Information
 
 For inquiries about SAF Furniture:

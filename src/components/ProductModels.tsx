@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import CloudinaryVideo from "./CloudinaryVideo";
 
 type Step = {
   src: string;
@@ -74,6 +75,13 @@ const ProductModels = () => {
     []
   );
 
+  const videoPublicIds: Record<string, string | undefined> = {
+    "Lugano Single Setup": "v1757424927/Lugano_Single_Seater_tbbizc",
+    "2seater Lugano setup": "v1757424957/Lugano_Double_Seater_bazuo1",
+    "Lugano table setup": "v1757424907/Lugano_Table_ea5gwq",
+    "Santorini Armchair Setup": "v1757424946/Santorini_Armchair_k6awcq",
+  };
+
   return (
     <section className="py-12 md:py-20 bg-background">
       <div className="container px-4">
@@ -113,6 +121,16 @@ const ProductModels = () => {
                   </figure>
                 ))}
               </div>
+              {videoPublicIds[group.title] && (
+                <div className="mt-6 rounded-xl overflow-hidden border bg-white">
+                  <h4 className="text-lg font-semibold mb-2">Assembly Video</h4>
+                  <CloudinaryVideo
+                    publicId={videoPublicIds[group.title]!}
+                    className="w-full aspect-video"
+                    controls
+                  />
+                </div>
+              )}
             </section>
           ))}
         </div>
