@@ -99,3 +99,8 @@
     @apply bg-background text-foreground font-sans;
   }
 }
+
+/* Prevent stray horizontal scroll on mobile due to wide/fixed elements */
+html, body {
+  overflow-x: hidden;
+}
