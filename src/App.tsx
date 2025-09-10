@@ -24,6 +24,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import { useScrollToTop } from "./hooks/useScrollToTop";
 import IntercomWidget from "./components/IntercomWidget";
 import FloatingWhatsApp from "./components/FloatingWhatsApp";
+import CookieConsent from "./components/CookieConsent";
 
 const AppContent = () => {
   useScrollToTop();
@@ -59,6 +60,7 @@ const AppContent = () => {
       <Toaster />
       <IntercomWidget />
       <FloatingWhatsApp />
+      <CookieConsent />
           </div>
   );
 };
