@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Cookie, X, Shield, CheckCircle } from "lucide-react";
+import { Cookie, X, CheckCircle } from "lucide-react";
 import { Button } from "./ui/button";
 
 const CookieConsent = () => {
@@ -74,13 +74,7 @@ const CookieConsent = () => {
           </div>
 
           <div className="relative z-10">
-            <div className="flex items-start gap-4 mb-4">
-              <div className="flex-shrink-0">
-                <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
-                  <Shield className="w-6 h-6 text-white" />
-                </div>
-              </div>
-              
+            <div className="mb-4">
               <div className="flex-1">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">
                   We Value Your Privacy
