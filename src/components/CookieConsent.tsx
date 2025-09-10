@@ -109,7 +109,7 @@ const CookieConsent = () => {
             {/* Privacy Policy Link */}
             <div className="mt-4 text-center">
               <a 
-                href="/privacy" 
+                href="/privacy-policy" 
                 className="text-sm text-primary hover:text-accent transition-colors duration-200 underline"
               >
                 Learn more about our privacy policy
