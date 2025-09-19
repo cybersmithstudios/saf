@@ -4,6 +4,7 @@ import { categories } from "@/data/categories";
 import ProductGrid from "@/components/collection/ProductGrid";
 import { ChevronRight } from "lucide-react";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import { getDriveImageUrl } from "@/assets/driveImages";
 
 type Img = { src: string; alt: string };
 const collectionGalleries: Record<string, Img[]> = {
@@ -86,21 +87,21 @@ const collectionGalleries: Record<string, Img[]> = {
     { src: "/Hotels/20170915_102432 - Copy.jpg", alt: "Hotels" },
   ],
   commercial: [
-    { src: "/Commercial/WhatsApp Image 2025-08-28 at 14.56.43_8979c9e4.jpg", alt: "Commercial" },
-    { src: "/Commercial/WhatsApp Image 2025-08-28 at 14.56.42_9ce5311d.jpg", alt: "Commercial" },
-    { src: "/Commercial/WhatsApp Image 2025-08-28 at 14.56.42_07db464f.jpg", alt: "Commercial" },
-    { src: "/Commercial/WhatsApp Image 2025-08-28 at 14.56.41_df7d8b12.jpg", alt: "Commercial" },
-    { src: "/Commercial/IMG_3111.JPG", alt: "Commercial" },
-    { src: "/Commercial/IMG_3084 (1).JPG", alt: "Commercial" },
-    { src: "/Commercial/IMG_3051.JPG", alt: "Commercial" },
-    { src: "/Commercial/IMG_3043.JPG", alt: "Commercial" },
-    { src: "/Commercial/IMG_3014.JPG", alt: "Commercial" },
-    { src: "/Commercial/IMG_20240130_105105.jpg", alt: "Commercial" },
-    { src: "/Commercial/IMG-20171030-WA0036.jpg", alt: "Commercial" },
-    { src: "/Commercial/IMG-20170330-WA0123.jpg", alt: "Commercial" },
-    { src: "/Commercial/IMG-20170330-WA0121.jpg", alt: "Commercial" },
-    { src: "/Commercial/20161031_112338.jpg", alt: "Commercial" },
-    { src: "/Commercial/20161031_112320.jpg", alt: "Commercial" },
+    { src: getDriveImageUrl("commercial/WhatsApp Image 2025-08-28 at 14.56.43_8979c9e4.jpg"), alt: "Commercial" },
+    { src: getDriveImageUrl("commercial/WhatsApp Image 2025-08-28 at 14.56.42_9ce5311d.jpg"), alt: "Commercial" },
+    { src: getDriveImageUrl("commercial/WhatsApp Image 2025-08-28 at 14.56.42_07db464f.jpg"), alt: "Commercial" },
+    { src: getDriveImageUrl("commercial/WhatsApp Image 2025-08-28 at 14.56.41_df7d8b12.jpg"), alt: "Commercial" },
+    { src: getDriveImageUrl("commercial/IMG_3111.JPG"), alt: "Commercial" },
+    { src: getDriveImageUrl("commercial/IMG_3084 (1).JPG"), alt: "Commercial" },
+    { src: getDriveImageUrl("commercial/IMG_3051.JPG"), alt: "Commercial" },
+    { src: getDriveImageUrl("commercial/IMG_3043.JPG"), alt: "Commercial" },
+    { src: getDriveImageUrl("commercial/IMG_3014.JPG"), alt: "Commercial" },
+    { src: getDriveImageUrl("commercial/IMG_20240130_105105.jpg"), alt: "Commercial" },
+    { src: getDriveImageUrl("commercial/IMG-20171030-WA0036.jpg"), alt: "Commercial" },
+    { src: getDriveImageUrl("commercial/IMG-20170330-WA0123.jpg"), alt: "Commercial" },
+    { src: getDriveImageUrl("commercial/IMG-20170330-WA0121.jpg"), alt: "Commercial" },
+    { src: getDriveImageUrl("commercial/20161031_112338.jpg"), alt: "Commercial" },
+    { src: getDriveImageUrl("commercial/20161031_112320.jpg"), alt: "Commercial" },
   ],
   residential: [
     { src: "/Residential/_OP10913 - Copy.jpg", alt: "Residential" },

@@ -20,8 +20,8 @@ const CloudinaryVideo = ({
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
   // Build HLS URL, fallback to mp4 if HLS not supported
-  const hlsUrl = `https://res.cloudinary.com/${cloudName}/video/upload/${publicId}.m3u8`;
-  const mp4Url = `https://res.cloudinary.com/${cloudName}/video/upload/${publicId}.mp4`;
+  const hlsUrl = `https://res.cloudinary.com/${cloudName}/video/upload/f_auto,q_auto/${publicId}.m3u8`;
+  const mp4Url = `https://res.cloudinary.com/${cloudName}/video/upload/f_auto,q_auto/${publicId}.mp4`;
 
   useEffect(() => {
     const video = videoRef.current;

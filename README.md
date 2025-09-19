@@ -75,6 +75,24 @@ const videoPublicIds = {
 
 3) Ensure HLS/DASH delivery is enabled on your Cloudinary account (or MP4 will be used as a fallback).
 
+## Google Drive Hosted Images
+
+Commercial collection images can be served from Google Drive using a central mapping with a local fallback.
+
+Steps:
+- Share the Drive folder/files as Anyone with the link (Viewer).
+- Copy each file's `FILE_ID` from links like `https://drive.google.com/file/d/FILE_ID/view`.
+- Open `src/assets/driveImages.ts` and populate `driveImageIds` using the exact keys shown in the type.
+
+Example:
+```ts
+export const driveImageIds = {
+  "commercial/IMG_3111.JPG": "1AbCdEfGhIjKlMnOpQrStUvWxYz123456",
+};
+```
+
+`getDriveImageUrl(key)` generates `https://drive.google.com/uc?export=view&id=FILE_ID`. If an ID is missing, the app uses the local `/public/Commercial/...` asset.
+
 ## Contact Information
 
 For inquiries about SAF Furniture:

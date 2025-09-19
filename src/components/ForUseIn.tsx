@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { getDriveImageUrl } from "@/assets/driveImages";
 
 const items = [
   { 
@@ -28,7 +29,7 @@ const items = [
   { 
     name: "Commercial", 
     slug: "commercial",
-    image: "/Commercial/IMG_3111.JPG",
+    image: getDriveImageUrl("commercial/IMG_3111.JPG"),
     description: "Commercial space solutions"
   },
   { 

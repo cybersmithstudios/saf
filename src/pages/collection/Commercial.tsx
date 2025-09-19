@@ -1,25 +1,31 @@
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import ImageLightbox from "@/components/ImageLightbox";
+import { getDriveImageUrl } from "@/assets/driveImages";
 
-const commercialImages = [
-  { src: "/Commercial/WhatsApp Image 2025-08-28 at 14.56.43_8979c9e4.jpg", alt: "Commercial furniture setup 1" },
-  { src: "/Commercial/WhatsApp Image 2025-08-28 at 14.56.42_9ce5311d.jpg", alt: "Commercial furniture setup 2" },
-  { src: "/Commercial/WhatsApp Image 2025-08-28 at 14.56.42_07db464f.jpg", alt: "Commercial furniture setup 3" },
-  { src: "/Commercial/WhatsApp Image 2025-08-28 at 14.56.41_df7d8b12.jpg", alt: "Commercial furniture setup 4" },
-  { src: "/Commercial/IMG_3111.JPG", alt: "Commercial furniture setup 5" },
-  { src: "/Commercial/IMG_3084 (1).JPG", alt: "Commercial furniture setup 6" },
-  { src: "/Commercial/IMG_3051.JPG", alt: "Commercial furniture setup 7" },
-  { src: "/Commercial/IMG_3043.JPG", alt: "Commercial furniture setup 8" },
-  { src: "/Commercial/IMG_3014.JPG", alt: "Commercial furniture setup 9" },
-  { src: "/Commercial/IMG_20240130_105105.jpg", alt: "Commercial furniture setup 10" },
-  { src: "/Commercial/IMG-20171030-WA0036.jpg", alt: "Commercial furniture setup 11" },
-  { src: "/Commercial/IMG-20170330-WA0123.jpg", alt: "Commercial furniture setup 12" },
-  { src: "/Commercial/IMG-20170330-WA0121.jpg", alt: "Commercial furniture setup 13" },
-  { src: "/Commercial/20161031_112338.jpg", alt: "Commercial furniture setup 14" },
-  { src: "/Commercial/20161031_112320.jpg", alt: "Commercial furniture setup 15" },
-];
+const commercialKeys = [
+  "commercial/WhatsApp Image 2025-08-28 at 14.56.43_8979c9e4.jpg",
+  "commercial/WhatsApp Image 2025-08-28 at 14.56.42_9ce5311d.jpg",
+  "commercial/WhatsApp Image 2025-08-28 at 14.56.42_07db464f.jpg",
+  "commercial/WhatsApp Image 2025-08-28 at 14.56.41_df7d8b12.jpg",
+  "commercial/IMG_3111.JPG",
+  "commercial/IMG_3084 (1).JPG",
+  "commercial/IMG_3051.JPG",
+  "commercial/IMG_3043.JPG",
+  "commercial/IMG_3014.JPG",
+  "commercial/IMG_20240130_105105.jpg",
+  "commercial/IMG-20171030-WA0036.jpg",
+  "commercial/IMG-20170330-WA0123.jpg",
+  "commercial/IMG-20170330-WA0121.jpg",
+  "commercial/20161031_112338.jpg",
+  "commercial/20161031_112320.jpg",
+] as const;
+
+const commercialImages = commercialKeys.map((key, index) => ({
+  src: getDriveImageUrl(key),
+  alt: `Commercial furniture setup ${index + 1}`,
+}));
 
 const Commercial = () => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
