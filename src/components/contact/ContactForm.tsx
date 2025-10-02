@@ -62,7 +62,7 @@ const ContactForm = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          timestamp: new Date().toISOString(),
+          timestamp: new Date().toLocaleString(),
           firstName: data.firstName,
           lastName: data.lastName,
           phone: data.phone,
