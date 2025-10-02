@@ -1,6 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -33,6 +34,7 @@ const formSchema = z.object({
 
 const ContactForm = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -46,13 +48,46 @@ const ContactForm = () => {
     },
   });
 
-  const onSubmit = (data: z.infer<typeof formSchema>) => {
-    console.log("Form submitted:", data);
-    toast({
-      title: "Message sent!",
-      description: "We'll get back to you soon.",
-    });
-    form.reset();
+  const onSubmit = async (data: z.infer<typeof formSchema>) => {
+    setIsSubmitting(true);
+    
+    try {
+      // Replace this URL with your Google Apps Script web app URL
+      const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyZQAkdzFyP4FHjrrke62EvfTJ0WsuEuERGGx0Cz3urWR2bPVfuXqQ_olx5PAPLnMo/exec";
+      
+      const response = await fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          timestamp: new Date().toISOString(),
+          firstName: data.firstName,
+          lastName: data.lastName,
+          phone: data.phone,
+          whatsapp: data.whatsapp,
+          email: data.email,
+          enquiryType: data.enquiryType,
+          additionalInfo: data.additionalInfo,
+        }),
+      });
+
+      toast({
+        title: "Message sent!",
+        description: "We'll get back to you soon.",
+      });
+      form.reset();
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -148,7 +183,7 @@ const ContactForm = () => {
                   <SelectItem value="rental">Rental Quote</SelectItem>
                   <SelectItem value="distributor">Distributor Inquiry</SelectItem>
                   <SelectItem value="maintenance">Furniture Maintenance</SelectItem>
-                  <SelectItem value="complaints">Complaints</SelectItem>
+                  <SelectItem value="general">General Enquiries</SelectItem>
                 </SelectContent>
               </Select>
               <FormMessage />
@@ -174,8 +209,12 @@ const ContactForm = () => {
           )}
         />
 
-        <Button type="submit" className="w-full bg-accent hover:bg-accent/90">
-          Send Message
+        <Button 
+          type="submit" 
+          className="w-full bg-accent hover:bg-accent/90"
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? "Sending..." : "Send Message"}
         </Button>
       </form>
     </Form>
