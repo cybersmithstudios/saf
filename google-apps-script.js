@@ -9,15 +9,27 @@ function doPost(e) {
     // Parse the incoming data
     const data = JSON.parse(e.postData.contents);
     
+    // Map enquiry type values to full names
+    const enquiryTypeMap = {
+      'order': 'Make an order',
+      'assembly': 'Assembly/Disassembly',
+      'rental': 'Rental Quote',
+      'distributor': 'Distributor Inquiry',
+      'maintenance': 'Furniture Maintenance',
+      'general': 'General Enquiries'
+    };
+    
+    const enquiryTypeFullName = enquiryTypeMap[data.enquiryType] || data.enquiryType || '';
+    
     // Prepare the row data
     const rowData = [
-      data.timestamp || new Date().toISOString(),
+      data.timestamp || new Date().toLocaleString(),
       data.firstName || '',
       data.lastName || '',
       data.phone || '',
       data.whatsapp || '',
       data.email || '',
-      data.enquiryType || '',
+      enquiryTypeFullName,
       data.additionalInfo || ''
     ];
     
@@ -89,7 +101,7 @@ function getOrCreateSheet() {
 // Test function to verify the setup
 function testFunction() {
   const testData = {
-    timestamp: new Date().toISOString(),
+    timestamp: new Date().toLocaleString(),
     firstName: 'Test',
     lastName: 'User',
     phone: '+1234567890',
