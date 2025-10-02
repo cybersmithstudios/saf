@@ -53,7 +53,7 @@ const ContactForm = () => {
     
     try {
       // Replace this URL with your Google Apps Script web app URL
-      const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyZQAkdzFyP4FHjrrke62EvfTJ0WsuEuERGGx0Cz3urWR2bPVfuXqQ_olx5PAPLnMo/exec";
+      const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxZXdIBpWDQ4FAClDmgcE2KpwpneRdPxlxSZfiqs9NC28F_oUESyb-dAviWIId4edA/exec";
       
       const response = await fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
